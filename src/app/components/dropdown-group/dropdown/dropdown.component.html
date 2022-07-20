@@ -1,0 +1,11 @@
+<label *ngIf="labelName != ''" for="">{{labelName}}</label>
+<div ngbDropdown class="dropdown">
+  <div class="d-grid">
+    <button class="btn-dropdown dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"
+      ngbDropdownToggle> <img *ngIf="iconPath" [src]="iconPath" alt=""> {{ selectedValue ? selectedValue:'กรุณาเลือก Data' }}</button>
+  </div>
+  <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+    <option *ngFor="let item of datas | keyvalue" (click)="clickSelect(item.value)" ngbDropdownItem>{{ item.key }}
+    </option>
+  </div>
+</div>

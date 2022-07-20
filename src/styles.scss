@@ -1,0 +1,17 @@
+/* You can add global styles to this file, and also import other style files */
+@use "stylesheets/variable/fonts";
+
+@import "bootstrap/dist/css/bootstrap.css";
+@import "~bootstrap-icons/font/bootstrap-icons.css";
+@import "button";
+@import "font";
+@import "input";
+@import "dropdown";
+
+body app-button ,
+body app-input ,
+body app-sidebar{
+  font-family: fonts.$Sarabun !important;
+}
+
+

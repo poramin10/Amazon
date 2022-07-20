@@ -1,0 +1,88 @@
+.sidebar {
+  display: flex;
+  top:0px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  background-color: #ffff;
+  width: 48px;
+  min-height: 100vh;
+  height: 100%;
+  // justify-content: center;
+  /* 01 dp */
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+  // margin-top: 10rem;
+}
+
+.fixed_icons {
+  // margin-top: 50px;
+
+  width: 100%;
+  text-align: center;
+}
+
+.img_icons {
+  // background-image: url('/assets/icons/sidebar_master.svg');
+
+  padding-top: 10px;
+  height: 24px;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 17px;
+}
+
+.fixed_icons:hover {
+  background-color: #F4E5C6;
+  .img_icons {
+    // background-image: url('/assets/icons/sidebar_master_hover.svg');
+    height: 24px;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  transition: 0.3s;
+}
+
+.activeMenu{
+  background-color: white !important;
+  border-left: 2px solid #EEA025;
+  border-radius: 2px;
+}
+
+.card_menubox{
+  position: absolute;
+  top: 0;
+  left: 100%;
+  z-index: 9999;
+}
+
+.card-header{
+  background-color: #273D26;
+  color: white;
+  font-weight: bold;
+  text-align: start;
+}
+.card-menu{
+  text-align: start;
+  font-weight: bold;
+}
+.card-menu:hover{
+  background-color: #F4E5C6;
+  cursor: pointer
+}
+
+// ::ng-deep .tooltip-inner{
+
+// }
+
+.card{
+  border: none;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2) !important;
+}
+
+.list-group-item{
+  border: none;
+}
+
+a {
+  text-decoration:none;
+}

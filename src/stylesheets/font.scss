@@ -1,0 +1,77 @@
+@use "variable/color-theme" as colors;
+@use "variable/emphasis";
+
+@mixin font($weight, $size, $lineh) {
+  font-weight: $weight;
+  font-size: $size;
+  line-height: $lineh;
+  &.primary {
+    color: colors.$primary;
+  }
+  &.primary-variant {
+    color: colors.$primary-variant;
+  }
+  &.secondary {
+    color: colors.$secondary;
+  }
+  &.secondary-variant {
+    color: colors.$secondary-variant;
+  }
+  &.background {
+    color: colors.$background;
+  }
+  &.surface {
+    color: colors.$surface;
+  }
+  &.error {
+    color: colors.$error;
+  }
+  &.on-primary {
+    color: colors.$on-primary;
+  }
+  &.on-secondary {
+    color: colors.$on-secondary;
+  }
+  &.on-background {
+    color: colors.$on-background;
+  }
+  &.on-surface {
+    color: colors.$on-surface;
+  }
+  &.on-error {
+    color: colors.$on-error;
+  }
+  &.high-emp {
+    opacity:  emphasis.$high-emp;
+  }
+  &.medium-emp {
+    opacity:  emphasis.$medium-emp;
+  }
+  &.disable-emp {
+    opacity:  emphasis.$disable-emp;
+  }
+}
+
+.heading1 {
+  @include font(bold, 24px, 36px);
+}
+.heading2 {
+  @include font(bold, 18px, 28px);
+}
+.sub-title {
+  @include font(normal, 16px, 24px);
+}
+.content-link {
+  @include font(normal, 14px, 22px);
+  text-decoration-line: underline;
+}
+.content-button {
+  @include font(600, 14px, 22px);
+}
+.body1 {
+  @include font(normal, 14px, 22px);
+}
+.body2 {
+  @include font(normal, 12px, 18px);
+}
+

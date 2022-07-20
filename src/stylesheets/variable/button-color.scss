@@ -1,0 +1,20 @@
+@use "variable/color-theme" as colors;
+
+$primary-default: colors.$secondary;
+$primary-hover: #EA9521;
+$primary-press: #EEA025;
+
+$secondary-border: 2px solid colors.$secondary;
+$secondary-default: #ffffff;
+$secondary-hover: colors.$secondary;
+$secondary-press: #ECAD3C;
+
+$text-default: #ffffff;
+$text-hover: #e3b650;
+$text-press: #e2a828;
+
+$disabled: #F1F1F1;
+$disabled-border: #9E9E9E;
+
+$error-border: #C73706;
+

@@ -1,0 +1,199 @@
+@use "variable/color-theme" as colors;
+@use "variable/button-color" as bc;
+@use "variable/emphasis" as emp;
+
+app-button {
+
+  font-weight: bold;
+
+  $button-padding-sm: 8px 35px;
+  $button-padding-md: 12px 35px;
+  $button-padding-lg: 16px 35px;
+
+  &.button-style {
+    &:active {
+      background-color: bc.$primary-press;
+    }
+
+    &:hover {
+      background-color: bc.$primary-hover;
+    }
+
+    &.disabled {
+      background-color: bc.$primary-default;
+      opacity: emp.$disable-emp;
+    }
+  }
+
+  cursor: pointer;
+
+  &.disabled {
+
+    // ! ! ! !
+    cursor: not-allowed;
+    pointer-events: none;
+
+    -webkit-touch-callout: none;
+    /* iOS Safari */
+    -webkit-user-select: none;
+    /* Safari */
+    -khtml-user-select: none;
+    /* Konqueror HTML */
+    -moz-user-select: none;
+    /* Old versions of Firefox */
+    -ms-user-select: none;
+    /* Internet Explorer/Edge */
+    user-select: none;
+    /* Non-prefixed version, currently                              supported by Chrome, Edge, Opera and Firefox */
+  }
+
+  width: fit-content;
+  border: none;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+
+  .icon-text-gap {
+    margin-right: 8px;
+  }
+
+  &.primary {
+
+    padding: $button-padding-sm;
+
+    &.sm {
+      padding: $button-padding-sm;
+    }
+
+    &.md {
+      padding: $button-padding-md;
+    }
+
+    &.lg {
+      padding: $button-padding-lg;
+    }
+
+    &.icon-button {
+      $button-padding-x: 12px;
+      $button-padding-y: 12px;
+
+      &.secondary {
+        $button-padding-x: 10px;
+        $button-padding-y: 10px;
+      }
+
+      padding: $button-padding-y $button-padding-x;
+    }
+
+    background-color: bc.$primary-default;
+    border: 2px solid colors.$secondary;
+
+    &:active {
+      background-color: bc.$primary-press;
+    }
+
+    &:hover {
+      background-color: bc.$primary-hover;
+    }
+
+    &.disabled {
+      background-color: bc.$primary-default;
+      opacity: emp.$disable-emp;
+    }
+  }
+
+
+  &.primary-outline {
+    padding: $button-padding-sm;
+
+    &.sm {
+      padding: $button-padding-sm;
+    }
+
+    &.md {
+      padding: $button-padding-md;
+    }
+
+    &.lg {
+      padding: $button-padding-lg;
+    }
+
+    &.icon-button {
+      $button-padding-x: 12px;
+      $button-padding-y: 12px;
+
+      &.secondary {
+        $button-padding-x: 10px;
+        $button-padding-y: 10px;
+      }
+
+      padding: $button-padding-y $button-padding-x;
+    }
+
+    border: 2px solid colors.$secondary;
+    background-color: colors.$background;
+
+    &:active {
+      background-color: bc.$primary-press;
+    }
+
+    &:hover {
+      background-color: bc.$primary-hover;
+    }
+
+    &.disabled {
+      background-color: bc.$primary-default;
+      opacity: emp.$disable-emp;
+    }
+  }
+
+  &.profile {
+    padding: $button-padding-sm;
+
+    &.sm {
+      padding: $button-padding-sm;
+    }
+
+    &.md {
+      padding: $button-padding-md;
+    }
+
+    &.lg {
+      padding: $button-padding-lg;
+    }
+
+    &.icon-button {
+      $button-padding-x: 12px;
+      $button-padding-y: 12px;
+
+      &.secondary {
+        $button-padding-x: 10px;
+        $button-padding-y: 10px;
+      }
+
+      padding: $button-padding-y $button-padding-x;
+    }
+
+    color: #ffff;
+    // border: 2px solid colors.$secondary;
+    background-color: #456B44;
+
+
+    &:active {
+      background-color: bc.$primary-press;
+    }
+
+    // &:hover {
+    //   background-color: bc.$primary-hover;
+    // }
+
+    &.disabled {
+      background-color: bc.$primary-default;
+      opacity: emp.$disable-emp;
+    }
+  }
+
+}

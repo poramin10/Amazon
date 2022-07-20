@@ -1,0 +1,103 @@
+@use "variable/color-theme" as colors;
+@use "variable/emphasis" as emp;
+@use "variable/button-color" as btn;
+
+app-input {
+
+  $height-sm : 40px;
+  $height-md : 48px;
+  $height-lg : 56px;
+
+  // ! ลบปุ่ม X ออก สำหรับ Type Search
+  input[type="search"]::-webkit-search-decoration,
+  input[type="search"]::-webkit-search-cancel-button,
+  input[type="search"]::-webkit-search-results-button,
+  input[type="search"]::-webkit-search-results-decoration {
+    -webkit-appearance: none;
+  }
+
+  &.input-primary {
+    input {
+      border: none !important;
+      box-shadow: none !important;
+    }
+
+    .input-form {
+      border: 1px solid #9E9E9E;
+      display: flex;
+      align-items: center;
+      border-radius: .25rem;
+
+      &:hover {
+        border: 1px solid #FAB81D !important;
+      }
+
+      &error {
+        border: 1px solid colors.$error  !important;
+      }
+
+    }
+
+    .form-control {
+      border: 1px solid #9E9E9E;
+      padding: .375rem 4px .375rem 8px;
+      height: $height-sm  !important;
+    }
+
+    &.sm .form-control {
+      height: $height-sm  !important;
+    }
+
+    &.md .form-control {
+      height: $height-md  !important;
+    }
+
+    &.lg .form-control {
+      height: $height-lg  !important;
+    }
+
+    &.disabled {
+      label {
+        color: #9E9E9E;
+      }
+
+      .input-form {
+        &:hover {
+          border: 1px solid btn.$disabled-border  !important;
+          // cursor: not-allowed !important;
+        }
+
+        background-color: btn.$disabled;
+        border: 1px solid btn.$disabled-border;
+
+        .icon-flex {
+          opacity: emp.$disable-emp;
+        }
+      }
+
+      .form-control {
+        color: #9E9E9E;
+        pointer-events: none;
+        background-color: btn.$disabled;
+        border: 1px solid btn.$disabled-border;
+      }
+    }
+
+    &.error {
+      .input-form {
+        border: 1px solid #C73706 !important;
+      }
+    }
+  }
+
+  .icon-clear {
+    cursor: pointer;
+    margin-right: 3px;
+  }
+
+  .icon-flex {
+    margin-left: 16px;
+    margin-right: 8px;
+  }
+
+}

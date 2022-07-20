@@ -1,0 +1,194 @@
+<div class="container-fulid" style="overflow: hidden ;">
+  <div class="row">
+    <div class="col-lg-12">
+      <app-navbar></app-navbar>
+    </div>
+    <div class="col-1">
+      <app-sidebar></app-sidebar>
+    </div>
+    <div class="col-11">
+
+      <div style="padding-top: 32px; padding-bottom: 32px;">
+        < Search </div>
+          <div class="card">
+            <div class="card-header">
+              Add Farmer (Seller)
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">Information - Farmer</h5>
+
+              <div class="row">
+                <div class="col-lg-2 mt-3">
+                  <app-input class="input-primary" typeInput="text" labelName="รหัสเกษตรกร"
+                    placeholderInput="รหัสเกษตรกร">
+                  </app-input>
+                </div>
+                <div class="col-lg-3 mt-3">
+                  <app-input class="input-primary" typeInput="text" labelName="ชื่อ - นามสกุล"
+                    placeholderInput="ชื่อ - นามสกุล">
+                  </app-input>
+                </div>
+                <div class="col-lg-3 mt-3">
+                  <app-input class="input-primary" typeInput="text" labelName="ID Card No."
+                    placeholderInput="ID Card No.">
+                  </app-input>
+                </div>
+                <div class="col-lg-2 mt-3">
+                  <app-input class="input-primary" typeInput="text" labelName="Type" placeholderInput="Type">
+                  </app-input>
+                </div>
+                <div class="col-lg-2 mt-3">
+                  <app-input class="input-primary" typeInput="text" labelName="ส่งเสริม Code"
+                    placeholderInput="ส่งเสริม Code">
+                  </app-input>
+                </div>
+
+                <div class="col-lg-5 mt-3">
+                  <app-input class="input-primary" typeInput="text" labelName="ที่อยู่" placeholderInput="ที่อยู่">
+                  </app-input>
+                </div>
+                <div class="col-lg-4 mt-3">
+                  <app-input class="input-primary" typeInput="text" labelName="เบอร์โทรศัพท์"
+                    placeholderInput="เบอร์โทรศัพท์">
+                  </app-input>
+                </div>
+                <div class="col-lg-3 mt-3">
+                  <app-input class="input-primary" typeInput="text" labelName="Surplus Price (บาท/kg)"
+                    placeholderInput="Surplus Price (บาท/kg)">
+                  </app-input>
+                </div>
+              </div>
+
+              <hr class="my-5">
+
+              <h5 class="card-title">Information - แหล่งปลูก</h5>
+
+              <div class="row">
+                <div class="col-lg-3 mt-3">
+                  <app-input class="input-primary" typeInput="text" labelName="หมู่บ้าน" placeholderInput="หมู่บ้าน">
+                  </app-input>
+                </div>
+                <div class="col-lg-2 mt-3">
+                  <app-input class="input-primary" typeInput="text" labelName="ดอย" placeholderInput="ดอย">
+                  </app-input>
+                </div>
+                <div class="col-lg-2 mt-3">
+                  <app-input class="input-primary" typeInput="text" labelName="ตำบล" placeholderInput="ตำบล">
+                  </app-input>
+                </div>
+                <div class="col-lg-2 mt-3">
+                  <app-input class="input-primary" typeInput="text" labelName="อำเภอ" placeholderInput="อำเภอ">
+                  </app-input>
+                </div>
+                <div class="col-lg-3 mt-3">
+                  <app-input class="input-primary" typeInput="text" labelName="จังหวัด" placeholderInput="จังหวัด">
+                  </app-input>
+                </div>
+              </div>
+
+              <hr class="my-5">
+
+              <h5 class="card-title">Information - เลขที่บัญชี</h5>
+
+              <div class="row">
+                <div class="col-lg-4 mt-3">
+                  <app-input class="input-primary" typeInput="text" labelName="ธนาคาร" placeholderInput="ธนาคาร">
+                  </app-input>
+                </div>
+                <div class="col-lg-4 mt-3">
+                  <app-input class="input-primary" typeInput="text" labelName="เลขที่บัญชี"
+                    placeholderInput="เลขที่บัญชี">
+                  </app-input>
+                </div>
+                <div class="col-lg-4 mt-3">
+                  <app-input class="input-primary" typeInput="text" labelName="รหัสสาขา" placeholderInput="รหัสสาขา">
+                  </app-input>
+                </div>
+              </div>
+
+              <hr class="my-5">
+
+              <h5 class="card-title">เอกสารแนบ</h5>
+
+              <div class="row">
+                <div class="col-lg-9 mt-3">
+                  <app-input class="input-primary" typeInput="text" labelName="File 1 : PDPA"
+                    placeholderInput="เลือกไฟล์">
+                  </app-input>
+                </div>
+                <div class="col-lg-3 mt-3">
+                  <app-button style="margin-top: 22px;" iconPath="assets/icons/upload.svg" buttonText="อัพโหลด"
+                    class="primary sm">
+                  </app-button>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-lg-6 mt-3">
+                  <app-input class="input-primary" typeInput="text" labelName="File 2 : ID Card"
+                    placeholderInput="เลือกไฟล์">
+                  </app-input>
+                </div>
+                <div class="col-lg-3 mt-3">
+                  <app-input class="input-primary" typeInput="text" labelName="Expire Date"
+                    placeholderInput="Expire Date">
+                  </app-input>
+                </div>
+                <div class="col-lg-3 mt-3">
+                  <app-button style="margin-top: 22px;" iconPath="assets/icons/upload.svg" buttonText="อัพโหลด"
+                    class="primary sm">
+                  </app-button>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-lg-9 mt-3">
+                  <app-input class="input-primary" typeInput="text" labelName="File 3 : Bookbank"
+                    placeholderInput="เลือกไฟล์">
+                  </app-input>
+                </div>
+                <div class="col-lg-3 mt-3">
+                  <app-button style="margin-top: 22px;" iconPath="assets/icons/upload.svg" buttonText="อัพโหลด"
+                    class="primary sm">
+                  </app-button>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-lg-9 mt-3">
+                  <app-input class="input-primary" typeInput="text" labelName="File 4 : อื่น ๆ"
+                    placeholderInput="เลือกไฟล์">
+                  </app-input>
+                </div>
+                <div class="col-lg-3 mt-3">
+                  <app-button style="margin-top: 22px;" iconPath="assets/icons/upload.svg" buttonText="อัพโหลด"
+                    class="primary sm">
+                  </app-button>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <div class="row justify-content-center mt-5 mb-3">
+            <div class="col-lg-2">
+              <app-button buttonText="ยืนยัน" class="primary sm disabled">
+              </app-button>
+            </div>
+            <div class="col-lg-2">
+              <app-button buttonText="ยกเลิก" class="primary-outline sm">
+              </app-button>
+            </div>
+            <div class="col-lg-2">
+              <app-button buttonText="Reject" class="primary-outline sm">
+              </app-button>
+            </div>
+            <div class="col-lg-2">
+              <app-button buttonText="Inactive" class="primary-outline sm">
+              </app-button>
+            </div>
+          </div>
+
+      </div>
+    </div>
+  </div>
