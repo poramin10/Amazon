@@ -1,12 +1,11 @@
-
-
 <label class="fw-bold" *ngIf="labelName" for="">{{ labelName }}</label>
 <div class="input-form">
   <div *ngIf="iconPath" class="icon-flex">
     <img [src]="iconPath" alt="">
   </div>
-  <input [formControl]="control" [(ngModel)]="dataValue" name="{{nameInput}}" type="{{typeInput}}" placeholder="{{placeholderInput}}" class="form-control" (input)="checkEvent()" >
-  <div *ngIf="checkIcon" class="icon-clear">
+  <input [formControl]="control" [(ngModel)]="dataValue" name="{{nameInput}}" type="{{typeInput}}"
+    placeholder="{{placeholderInput}}" class="form-control" (input)="checkEvent()">
+  <div *ngIf="control.value != '' " class="icon-clear">
     <img (click)="clearInput()" src="assets/icons/clear.svg" alt="">
   </div>
 </div>

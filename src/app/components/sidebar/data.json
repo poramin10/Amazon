@@ -92,6 +92,10 @@
       {
         "name": "Step 3 : %Defect (QA)",
         "url": "kalaprocess/step3"
+      },
+      {
+        "name": "Demo Page1",
+        "url": "kalaprocess/demopage1"
       }
     ]
   }

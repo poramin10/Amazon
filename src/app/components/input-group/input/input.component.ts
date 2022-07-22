@@ -17,33 +17,22 @@ export class InputComponent {
   // @Input() formControl:string | undefined;
   @Input() formControlName:string | undefined;
   @Input() control = new FormControl();
-  @Input()dataValue : string = ''
+  dataValue : string = ''
   checkIcon : Boolean = true;
-
 
 
   constructor() { }
 
   ngOnInit(): void {
-    this.checkEvent()
   }
 
   checkEvent(){
-    // console.log('OK')
-    if(this.dataValue != ''){
-      console.log(this.dataValue)
-      console.log('แสดง')
-      // console.log(this.formControl)
-      this.checkIcon = true;
-    }else{
-      console.log('ไม่แสดง')
-      this.checkIcon = false;
-    }
+
   }
 
   clearInput(){
-    this.dataValue = '';
-    this.checkEvent();
+    this.control.setValue('');
   }
+
 
 }

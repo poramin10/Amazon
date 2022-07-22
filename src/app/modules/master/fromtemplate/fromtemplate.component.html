@@ -1,45 +1,13 @@
 <div class="container">
   <div class="row mt-5">
     <div class="col-lg-6">
-      <app-input (formControl)="firstname" class="input-primary" labelName="ชื่อจริง" placeholderInput="กรุณากรอกชื่อจริง"></app-input>
+      <app-input #input_firstname [control]="firstname" class="input-primary" labelName="ชื่อจริง" placeholderInput="กรุณากรอกชื่อจริง"></app-input>
     </div>
     <div class="col-lg-6">
-      <app-input (formControl)="lastname" class="input-primary" labelName="นามสกุล" placeholderInput="นามสกุล"></app-input>
+      <app-input #input_lastname [control]="lastname" class="input-primary" labelName="นามสกุล" placeholderInput="กรุณากรอกนามสกุล"></app-input>
     </div>
     <div class="col-lg-12 mt-3">
-      <app-button style="float: right" class="primary" buttonText="บันทึกข้อมูล"></app-button>
+      <app-button (click)="AddData()" style="float: right" class="primary" buttonText="บันทึกข้อมูล"></app-button>
     </div>
   </div>
 </div>
-
-<!-- <h3>Using FormControl </h3>
-<div>
-  <div>
-    Name: <input [formControl]="name">
-    <label *ngIf="name.invalid" [ngClass]="'error'"> Name required with max 15 character. </label>
-  </div>
-  <div>
-    <button (click)="setNameValue()">Set value</button>
-    <button (click)="setResetName()">Reset</button>
-  </div>
-  <div>
-    Age: <input [formControl]="age">
-  </div>
-  <div>
-    City: <input [formControl]="city">
-  </div>
-  <div>
-    Country: <input [formControl]="country">
-  </div>
-  <div>
-    <input type="checkbox" [checked]="married.value" (change)="changeValue()" />
-    Are you married?
-  </div>
-</div>
-<div>
-  <p>Name: <b>{{ name.value }}</b>, Validation Status: <b>{{ name.status }}</b></p>
-  <p>Age: <b>{{ age.value }}</b>, Validation Status: <b>{{ age.status }}</b></p>
-  <p>City: <b>{{ city.value }}</b> </p>
-  <p>Country: <b>{{ country.value }}</b> </p>
-  <p>Married?: <b>{{ married.value }}</b> </p>
-</div> -->

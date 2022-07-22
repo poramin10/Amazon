@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, ViewChild } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
 
 @Component({
@@ -8,29 +8,26 @@ import { FormControl, Validators } from '@angular/forms';
 })
 export class FromtemplateComponent implements OnInit {
 
-  firstname = new FormControl('', [Validators.required]);
-  lastname = new FormControl('', [Validators.required]);
+  @ViewChild('input_firstname') input_firstname!:any;
+  @ViewChild('input_lastname') input_lastname!:any;
+
+  firstname = new FormControl();
+  lastname = new FormControl();
 
   ngOnInit(): void {
   }
 
-  name = new FormControl('', [Validators.required, Validators.maxLength(15)]);
-  age = new FormControl(20, Validators.required);
-  city = new FormControl();
-  country = new FormControl({value: 'India', disabled: true});
-  married = new FormControl(true);
+  AddData(){
+    console.log(this.firstname.value)
+    console.log(this.lastname.value)
+    console.log('clear')
+    this.firstname.setValue('');
+    this.lastname.setValue('');
 
-  setNameValue() {
-      this.name.setValue('Donald Trump');
-      console.log('Name: ' + this.name.value);
-      console.log('Validation Status: ' + this.name.status);
+    this.input_firstname.clearInput();
+    this.input_lastname.clearInput();
+    // this.input_lastname.clearInput();
   }
-  setResetName() {
-      this.name.reset();
-  }
-  changeValue() {
-      console.log(this.married.value);
-      this.married = new FormControl(!this.married.value);
-  }
+
 
 }
