@@ -31,7 +31,7 @@ export class SidebarComponent implements OnInit {
   @HostListener('document:click', ['$event'])
   click() {
     if (this.checkClose == false) {
-      console.log('ปิด')
+      // console.log('ปิด')
       this.menuClick = '';
     }
     this.checkClose = false;

@@ -41,6 +41,40 @@ thead{
   color: #ffff;
 }
 
+.lineTable hr {
+  margin : 0px !important
+}
+
+.table>:not(caption)>*>.lineTable{
+  opacity: 0.2;
+  padding: .0rem 24px !important;
+}
+tr{
+  padding: 10px;
+}
+td,th{
+  // border-bottom: 1px solid #F1F1F1
+}
+
+.line-table-left{
+  border-bottom: 1px solid #F1F1F1;
+  position: absolute;
+  left: 15px;
+  bottom: 0;
+  width:100%;
+}
+.line-table-right{
+  border-bottom: 1px solid #F1F1F1;
+  position: absolute;
+  right: 15px;
+  bottom: 0;
+  width:100%;
+}
+
+.line-table-bottom{
+  border-bottom: 1px solid #F1F1F1;
+}
+
 // ? END TABLE
 
 // ? START Other

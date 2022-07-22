@@ -20,24 +20,25 @@
           <table class="table table-borderless">
             <thead>
               <tr>
-                <th class="thead-left col-2 text-center" scope="col">ลำดับ</th>
+                <th class="thead-left col-2 text-center" scope="col"> ลำดับ</th>
                 <th class="col-4" scope="col">รายการ</th>
                 <th class="col-3" scope="col">%Defect</th>
                 <th class="thead-right" class="" class="thead-right" scope="col"></th>
               </tr>
             </thead>
-            <tbody>
+            <tbody class="p-2">
               <tr>
-                <th class="text-center" scope="row">1</th>
-                <td>ความชื้นสินค้า</td>
-                <td style="color: #9E9E9E">%Defect</td>
-                <td>%</td>
+                <th style="position: relative ;" class="text-center" scope="row"> 1 <div class="line-table-left"></div> </th>
+                <td class="line-table-bottom">ความชื้นสินค้า</td>
+                <td class="line-table-bottom" style="color: #9E9E9E">%Defect</td>
+                <td style="position: relative ;">%<div class="line-table-right"></div></td>
               </tr>
               <tr>
-                <th class="text-center" scope="row">2</th>
-                <td>เกณฑ์ %HM</td>
-                <td>9.00 - 12.50</td>
-                <td>บาท/kg.</td>
+                <th style="position: relative ;" class="text-center" scope="row"> 2 <div class="line-table-left"></div> </th>
+                <td class="line-table-bottom">เกณฑ์ %HM</td>
+                <td class="line-table-bottom">%9.00 - 12.50</td>
+                <td style="position: relative ;">บาท/kg.<div class="line-table-right"></div></td>
+
               </tr>
             </tbody>
           </table>
@@ -92,23 +93,28 @@
             <tbody>
 
               <tr *ngFor="let item of dataDemo ; let i = index">
-                <th class="text-center col-2" scope="row">{{i + 1}}</th>
-                <td>
-                  <span *ngIf="i == 0">0.00</span>
+                <th style="position: relative ;" class="col-2 text-center" scope="row"> {{i + 1}} <div class="line-table-left"></div> </th>
+                <td class="line-table-bottom col-2">
+                   <span *ngIf="i == 0">0.00</span>
                   <span *ngIf="i > 0 ">{{+this.dataDemo[i-1].defect + 0.01}}</span>
                 </td>
-                <td>-</td>
-                <td>{{item.defect | number : '1.2-2'}}</td>
-                <td>=</td>
-                <td class="text-center">{{item.price | number : '1.2-2'}}</td>
+                <td class="line-table-bottom col-1">-</td>
+                <td class="line-table-bottom col-2">{{item.defect | number : '1.2-2'}}</td>
+                <td class="line-table-bottom col-2">=</td>
+                <td style="position: relative ;" class="text-center">{{item.price | number : '1.2-2'}}<div class="line-table-right"></div></td>
+
               </tr>
 
               <tr *ngIf="boolCheckClick == false else SuccessTable" style="vertical-align: middle;">
                 <th class="text-center col-2" scope="row">{{this.dataDemo.length + 1}}</th>
-                <td></td>
+                <td>
+                  <span *ngIf="this.dataDemo.length == 0">0.00</span>
+                  <span *ngIf="this.dataDemo.length > 0 ">{{+this.dataDemo[this.dataDemo.length-1].defect +
+                    0.01}}</span>
+                </td>
                 <td>-</td>
                 <td>
-                  <app-input class="input-primary" [control]="defect" typeInput="number" placeholderInput="%Defect">
+                  <app-input [ngClass]="checkError == true? 'error' : '' " class="input-primary" [control]="defect" typeInput="number" placeholderInput="%Defect">
                   </app-input>
                   <small *ngIf="checkError == true" class="text-danger">ข้อมูลต้องมากกว่าข้อมูลก่อนหน้า</small>
                 </td>
@@ -150,7 +156,7 @@
             </div>
           </div>
 
-          <div style="display: flex ; justify-content: center;">
+          <div style="display: flex ; justify-content: center;" class="mt-3">
             <app-button [ngClass]="boolCheckClick == true ? 'disabled' : ''" class="primary me-3" (click)="addItem()"
               buttonText="+"></app-button>
             <app-button class="primary" (click)="deleteItem()" buttonText="-"></app-button>
