@@ -47,14 +47,20 @@ app-button {
     /* Non-prefixed version, currently                              supported by Chrome, Edge, Opera and Firefox */
   }
 
-  width: fit-content;
+
   border: none;
   border-radius: 8px;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  width: 100%;
+
+  width: fit-content;
+
+  //? เพิ่ม Button Control เพื่อให้ปุ่ม เต็ม Column 
+  &.button-control{
+    width: 100%;
+  }
 
   .icon-text-gap {
     margin-right: 8px;

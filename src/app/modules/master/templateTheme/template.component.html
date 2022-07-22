@@ -1,0 +1,217 @@
+<div class="container">
+
+  <section name="btn-sm">
+    <div class="row mt-3">
+      <div class="col-12">
+        <h3>Button SM</h3>
+      </div>
+      <div class="col-lg-2">
+        <app-button buttonText="Button" class="primary sm">
+        </app-button>
+      </div>
+
+      <div class="col-lg-2">
+        <app-button buttonText="Button" (click)="check()" class="primary sm disabled">
+        </app-button>
+      </div>
+      <div class="col-lg-2">
+        <app-button buttonText="Button" iconPath="assets/icons/plus.svg" class="primary sm">
+        </app-button>
+      </div>
+      <div class="col-lg-2">
+        <app-button buttonText="Button" iconPath="assets/icons/plus.svg" class="primary sm disabled">
+        </app-button>
+      </div>
+    </div>
+  </section>
+
+  <section name="btn-md">
+    <div class="row mt-3">
+      <div class="col-12">
+        <h3>Button MD</h3>
+      </div>
+      <div class="col-lg-2">
+          <app-button buttonText="Button" class="primary md">
+          </app-button>
+      </div>
+      <div class="col-lg-2">
+        <app-button buttonText="Button" class="primary md disabled">
+        </app-button>
+      </div>
+      <div class="col-lg-2">
+        <app-button buttonText="Button" iconPath="assets/icons/plus.svg" class="primary md">
+        </app-button>
+      </div>
+      <div class="col-lg-2">
+        <app-button buttonText="Button" iconPath="assets/icons/plus.svg" class="primary md disabled">
+        </app-button>
+      </div>
+
+    </div>
+  </section>
+
+  <section name="btn-lg">
+    <div class="row mt-3">
+      <div class="col-12">
+        <h3>Button LG</h3>
+      </div>
+      <div class="col-lg-2">
+        <app-button buttonText="Button" class="primary lg">
+        </app-button>
+      </div>
+      <div class="col-lg-2">
+        <app-button buttonText="Button" class="primary lg disabled">
+        </app-button>
+      </div>
+      <div class="col-lg-2">
+        <app-button buttonText="Button" iconPath="assets/icons/plus.svg" class="primary lg">
+        </app-button>
+      </div>
+      <div class="col-lg-2">
+        <app-button buttonText="Button" iconPath="assets/icons/plus.svg" class="primary lg disabled">
+        </app-button>
+      </div>
+
+    </div>
+  </section>
+
+  <section name="btn-lg">
+    <div class="row mt-3">
+      <div class="col-12">
+        <h3>Button Outline</h3>
+      </div>
+      <div class="col-lg-2">
+        <app-button buttonText="Button" class="primary-outline">
+        </app-button>
+      </div>
+      <div class="col-lg-2">
+        <app-button buttonText="Button" class="primary-outline disabled">
+        </app-button>
+      </div>
+      <div class="col-lg-2">
+        <app-button buttonText="Button" class="primary-outline md">
+        </app-button>
+      </div>
+      <div class="col-lg-2">
+        <app-button buttonText="Button" iconPath="assets/icons/plus.svg" class="primary-outline lg">
+        </app-button>
+      </div>
+    </div>
+  </section>
+
+
+  <div class="row mt-3">
+    <div class="col-lg-2">
+      <app-input class="input-primary" typeInput="search" labelName="Text" placeholderInput="Data"></app-input>
+    </div>
+    <div class="col-lg-2">
+      <app-dropdown
+      class="dropdown-primary"
+      labelName="Demo Dropdown"
+      [datas]="data"
+      (selectedEvent)="selectedCustomerValue($event)"
+      >
+     </app-dropdown>
+    </div>
+    <div class="col-lg-12">
+      <app-input class="input-primary" typeInput="search" labelName="Text" placeholderInput="Data"></app-input>
+    </div>
+    <div class="col-lg-2">
+      <app-input class="input-primary sm disabled" nameInput="firstname" typeInput="text" labelName="Text"
+        placeholderInput="Data"></app-input>
+    </div>
+    <div class="col-lg-2">
+      <app-input class="input-primary sm" iconPath="assets/icons/plus.svg" nameInput="firstname" typeInput="text"
+        labelName="Text" placeholderInput="Data"></app-input>
+    </div>
+    <div class="col-lg-2">
+      <app-input class="input-primary sm disabled" iconPath="assets/icons/plus.svg" nameInput="firstname"
+        typeInput="text" labelName="Text" placeholderInput="Data"></app-input>
+    </div>
+    <div class="col-lg-2">
+      <app-input class="input-primary sm error" iconPath="assets/icons/plus.svg" nameInput="firstname" typeInput="text"
+        labelName="Text" placeholderInput="Data"></app-input>
+    </div>
+  </div>
+
+  <div class="row mt-3">
+    <div class="col-lg-2">
+      <app-input class="input-primary md" typeInput="text" labelName="Text" placeholderInput="Data"></app-input>
+    </div>
+    <div class="col-lg-2">
+      <app-input class="input-primary md disabled" nameInput="firstname" typeInput="text" labelName="Text"
+        placeholderInput="Data"></app-input>
+    </div>
+    <div class="col-lg-2">
+      <app-input class="input-primary md" iconPath="assets/icons/plus.svg" nameInput="firstname" typeInput="text"
+        labelName="Text" placeholderInput="Data"></app-input>
+    </div>
+    <div class="col-lg-2">
+      <app-input class="input-primary md disabled" iconPath="assets/icons/plus.svg" nameInput="firstname"
+        typeInput="text" labelName="Text" placeholderInput="Data"></app-input>
+    </div>
+  </div>
+
+  <div class="row mt-3">
+    <div class="col-lg-2">
+      <app-input class="input-primary lg" typeInput="text" labelName="Text" placeholderInput="Data"></app-input>
+    </div>
+    <div class="col-lg-2">
+      <app-input class="input-primary lg disabled" nameInput="firstname" typeInput="text" labelName="Text"
+        placeholderInput="Data"></app-input>
+    </div>
+    <div class="col-lg-2">
+      <app-input class="input-primary lg" iconPath="assets/icons/plus.svg" nameInput="firstname" typeInput="text"
+        labelName="Text" placeholderInput="Data"></app-input>
+    </div>
+    <div class="col-lg-2">
+      <app-input class="input-primary lg disabled" iconPath="assets/icons/plus.svg" nameInput="firstname"
+        typeInput="text" labelName="Text" placeholderInput="Data"></app-input>
+    </div>
+  </div>
+
+  <div class="row mt-3">
+    <div class="col-lg-3">
+      <app-dropdown
+       class="dropdown-primary"
+       labelName="Demo Dropdown"
+       [datas]="data"
+       (selectedEvent)="selectedCustomerValue($event)"
+       >
+      </app-dropdown>
+    </div>
+    <div class="col-lg-3">
+      <app-dropdown
+       class="dropdown-primary"
+       labelName="Demo Dropdown"
+       [datas]="data"
+       (selectedEvent)="selectedCustomerValue($event)"
+       [selectedValue]="'data1'"
+       >
+      </app-dropdown>
+    </div>
+    <div class="col-lg-3">
+      <app-dropdown
+       class="dropdown-primary disabled"
+       labelName="Demo Dropdown (disabled)"
+       [datas]="data"
+       (selectedEvent)="selectedCustomerValue($event)"
+       >
+      </app-dropdown>
+    </div>
+    <div class="col-lg-3">
+      <app-dropdown
+      iconPath="/assets/icons/plus.svg"
+       class="dropdown-primary"
+       labelName="Demo Dropdown"
+       [datas]="data"
+       (selectedEvent)="selectedCustomerValue($event)"
+       >
+      </app-dropdown>
+    </div>
+  </div>
+
+</div>
+
+<!-- [selectedValue]="selectedData"
+(selectedEvent)="selectedCustomerValue($event)" -->

@@ -1,63 +1,34 @@
-
 <div class="sidebar">
 
   <div style="margin-top: 50px ;"></div>
 
-  <div style="position:relative" (click)="activePage(menu.nameMenu)"
+  <div style="position:relative" [ngClass]="menuActive === menu.nameMenu ? 'activeMenu' : '' "
     *ngFor="let menu of barMenu ; let i = index" (mouseover)="checkHover(menu.nameMenu)" (mouseout)="clearHover()"
     class="fixed_icons">
-    <div *ngIf="menuHover != menu.nameMenu" class="img_icons"
-      [ngStyle]="{'background-image': urlIcon(menu.nameMenu)}"></div>
-    <div ngbTooltip="{{menu.nameTodo}}" *ngIf="menuHover === menu.nameMenu"
-      class="img_icons" [ngStyle]="{'background-image': urlIconHover(menu.nameMenu)}"></div>
-    <!-- <div *ngIf="menuActive == menu.nameMenu" class="img_icons"
-      [ngStyle]="{'background-image': urlIconHover(menu.nameMenu)}"></div> -->
+    <div (click)="clickSidebar(menu.nameMenu)" *ngIf="menuHover != menu.nameMenu && menuActive != menu.nameMenu"
+      class="img_icons" [ngStyle]="{'background-image': urlIcon(menu.iconMenu)}"></div>
+    <div (click)="clickSidebar(menu.nameMenu)" ngbTooltip="{{menu.nameTotip}}"
+      *ngIf="menuHover === menu.nameMenu && menuActive != menu.nameMenu" class="img_icons"
+      [ngStyle]="{'background-image': urlIconHover(menu.iconMenuHover)}"></div>
+    <div (click)="clickSidebar(menu.nameMenu)" ngbTooltip="{{menu.nameTotip}}" *ngIf="menuActive === menu.nameMenu"
+      class="img_icons" [ngStyle]="{'background-image': urlIconHover(menu.iconMenuHover)}"></div>
 
     <!-- Active Menu -->
-      <div *ngIf="menuActive == menu.nameMenu" class="card_menubox">
-        <div class="card" style="width: 18rem;">
-          <div class="card-header">
-            {{menu.nameTodo}}
-          </div>
-
-          <ul class="list-group list-group-flush">
-            <a routerLink="master/page1" *ngFor="let nameSubMenu of menu.subMenu" >
-              <li class="list-group-item card-menu">{{nameSubMenu.name}}</li>
-            </a>
-          </ul>
+    <div *ngIf="menuClick == menu.nameMenu" class="card_menubox">
+      <div class="card" style="width: 18rem;">
+        <div class="card-header">
+          {{menu.nameTotip}}
         </div>
+
+        <ul class="list-group list-group-flush">
+          <a (click)="checkActiveSidebar(nameSubMenu.url , nameSubMenu.name , menu.nameMenu)"
+            routerLink="{{nameSubMenu.url}}" *ngFor="let nameSubMenu of menu.subMenu">
+            <li class="list-group-item card-menu" routerLinkActive="menu-active">{{nameSubMenu.name}}</li>
+          </a>
+        </ul>
+
       </div>
+    </div>
 
   </div>
 </div>
-
-
-<!-- <div class="sidebar">
-
-  <div style="margin-top: 50px ;"></div>
-
-  <div style="position:relative" [ngClass]="menuActive == menu.nameMenu ? 'activeMenu' : '' " (click)="clickPage(menu.nameMenu)"
-    *ngFor="let menu of barMenu ; let i = index" (mouseover)="checkHover(menu.nameMenu)" (mouseout)="clearHover()"
-    class="fixed_icons">
-    <div *ngIf="menuHover != menu.nameMenu && menuActive != menu.nameMenu" class="img_icons"
-      [ngStyle]="{'background-image': urlIcon(menu.nameMenu)}"></div>
-    <div ngbTooltip="{{menu.nameTodo}}" *ngIf="menuHover === menu.nameMenu && menuActive != menu.nameMenu "
-      class="img_icons" [ngStyle]="{'background-image': urlIconHover(menu.nameMenu)}"></div>
-    <div *ngIf="menuActive == menu.nameMenu" class="img_icons"
-      [ngStyle]="{'background-image': urlIconHover(menu.nameMenu)}"></div>
-
-      <div *ngIf="menuActive == menu.nameMenu" class="card_menubox">
-        <div class="card" style="width: 18rem;">
-          <div class="card-header">
-            {{menu.nameTodo}}
-          </div>
-          <ul class="list-group list-group-flush">
-            <li *ngFor="let nameSubMenu of menu.subMenu" class="list-group-item card-menu">{{nameSubMenu.name}}</li>
-          </ul>
-        </div>
-      </div>
-
-  </div>
-
-</div> -->
-

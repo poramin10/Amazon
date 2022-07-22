@@ -1,0 +1,54 @@
+// ? START CARD
+.card-header {
+  border-radius: 8px 8px 0px 0px !important;
+  background-color: #273D26 !important;
+  color: white;
+}
+
+.card {
+  margin-right: 42px !important;
+  border-radius: 8px 8px 0px 0px !important;
+}
+
+.card-title{
+  font-weight: bold;
+}
+
+.card-body {
+  padding: 1rem 2rem !important;
+}
+
+// ? END CARD
+
+// ? START TABLE\
+table{
+  border: 1px solid #F1F1F1;
+  border-radius: 8px 8px 0px 0px !important;
+}
+
+thead {
+  background-color: #456B44;
+}
+
+thead tr .thead-left {
+  border-radius: 8px 0px 0px 0px;
+}
+thead tr .thead-right {
+  border-radius: 0px 8px 0px 0px;
+}
+
+thead{
+  color: #ffff;
+}
+
+// ? END TABLE
+
+// ? START Other
+
+.fixed-icons{
+  position:absolute ;
+  top:30px;
+  right: -5px;
+}
+
+// ? END Other

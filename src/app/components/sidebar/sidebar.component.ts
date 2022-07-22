@@ -1,4 +1,7 @@
-import { Component, HostListener, OnInit } from '@angular/core';
+import { Component, EventEmitter, HostListener, OnInit, Output } from '@angular/core';
+import { AppState } from 'src/app/app-state';
+import { SideBarMenu } from 'src/app/interfaces/sidebarmenu';
+import * as data from './data.json';
 
 @Component({
   selector: 'app-sidebar',
@@ -6,124 +9,61 @@ import { Component, HostListener, OnInit } from '@angular/core';
   styleUrls: ['./sidebar.component.scss']
 })
 export class SidebarComponent implements OnInit {
-  photo:any;
-  iconHover:boolean = false;
-  menuHover:string = ''
-  menuActive:string = ''
-  menuClick:string = ''
-  checkClose:boolean = false;
-  barMenu:any = [
-    {
-      nameMenu: 'master',
-      nameTodo: 'master',
-      subMenu: [
-        {
-          name: 'page1',
-          url: 'http'
-        },
-        {
-          name: 'page2',
-          url: 'http'
-        },
-        {
-          name: 'page3',
-          url: 'http'
-        },
-      ]
+  photo: any;
+  iconHover: boolean = false;
+  menuHover: string = ''
+  menuActive: string = ''
+  menuClick: string = ''
+  checkClose: boolean = false;
+  clickPage: boolean = false;
 
-    },
-    {
-      nameMenu: 'database',
-      nameTodo: 'database',
-      subMenu: [
-        {
-          name: 'page1',
-          url: 'http'
-        },
-        {
-          name: 'page2',
-          url: 'http'
-        },
-      ]
-    },
-    {
-      nameMenu: 'approval',
-      nameTodo: 'Approval & Maintain',
-      subMenu: [
-        {
-          name: 'page1',
-          url: 'http'
-        },
-        {
-          name: 'page2',
-          url: 'http'
-        },
-        {
-          name: 'page3',
-          url: 'http'
-        },
-        {
-          name: 'page4',
-          url: 'http'
-        },
-        {
-          name: 'page5',
-          url: 'http'
-        },
-        {
-          name: 'page6',
-          url: 'http'
-        },
-        {
-          name: 'page7',
-          url: 'http'
-        },
-      ]
-    },
-  ]
+  barMenu: any = (data as any).default
 
-  constructor() { }
+  constructor(private appState: AppState) {
+
+  }
 
   ngOnInit(): void {
+    const urlBase = window.location.href.split('/')
+    this.menuActive = urlBase[3];
   }
 
   @HostListener('document:click', ['$event'])
-  click(menuActive:string) {
-    if(this.checkClose == false){
-      this.menuActive = '';
+  click() {
+    if (this.checkClose == false) {
+      console.log('ปิด')
+      this.menuClick = '';
     }
     this.checkClose = false;
   }
 
-  urlIcon(menu:string){
-    return `url('/assets/icons/sidebar_${menu}.svg')`
+  urlIcon(menu: string) {
+    return `url('/assets/icons/${menu}.svg')`
   }
-  urlIconHover(menu:string){
-    return `url('/assets/icons/sidebar_${menu}_hover.svg')`
+  urlIconHover(menu: string) {
+    return `url('/assets/icons/${menu}.svg')`
   }
 
 
-  checkHover(menu:string){
+  checkHover(menu: string) {
     this.menuHover = menu
   }
 
-  clearHover(){
+  clearHover() {
     this.menuHover = ''
   }
 
-  clickPage(menuClick:string){
-    this.menuClick = menuClick;
+  clickSidebar(menuClick: string) {
+    this.menuClick = menuClick
     this.checkClose = true;
   }
 
-  activePage(menuActive:string){
-    // menuActive = 'master'
-    this.menuActive = menuActive
-    this.checkClose = true;
-  }
 
-  checkClick(){
-    console.log("click")
+  checkActiveSidebar(url: string, page: string , nameMenu:string) {
+    this.appState.pageNameMenu.next(nameMenu)
+    this.appState.pageTitle.next(page)
+    const urlBase = url.split('/')
+    this.menuActive = urlBase[0];
   }
 
 }

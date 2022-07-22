@@ -8,10 +8,14 @@
 @import "input";
 @import "dropdown";
 
-body app-button ,
-body app-input ,
-body app-sidebar{
+// body app-button ,
+// body app-input ,
+// body app-dropdown ,
+// body app-sidebar{
+//   font-family: fonts.$Sarabun !important;
+// }
+
+body{
   font-family: fonts.$Sarabun !important;
 }
-
 

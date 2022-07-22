@@ -5,8 +5,7 @@
   <div *ngIf="iconPath" class="icon-flex">
     <img [src]="iconPath" alt="">
   </div>
-  <input [formControl]="nameFormControl" name="{{nameInput}}" type="{{typeInput}}" placeholder="{{placeholderInput}}" class="form-control"
-    [(ngModel)]="dataValue" (input)="checkEvent()" >
+  <input [formControl]="control" [(ngModel)]="dataValue" name="{{nameInput}}" type="{{typeInput}}" placeholder="{{placeholderInput}}" class="form-control" (input)="checkEvent()" >
   <div *ngIf="checkIcon" class="icon-clear">
     <img (click)="clearInput()" src="assets/icons/clear.svg" alt="">
   </div>

@@ -24,7 +24,7 @@ export class DropdownComponent implements OnInit {
   @Input() selectedValue?:any = '';
 
   ngOnInit(): void {
-    console.log("Data: ",this.datas);
+    // console.log("Data: ",this.datas);
   }
 
   clickSelect(data:any){

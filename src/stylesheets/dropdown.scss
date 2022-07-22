@@ -4,6 +4,11 @@
 @use "dropdown-variable" as dropdown;
 
 app-dropdown {
+
+  label{
+    font-weight: bold;
+  }
+
   .btn-dropdown {
     display: flex;
     font-weight: 400;
@@ -27,6 +32,7 @@ app-dropdown {
 
   .dropdown-menu {
     width: 100% !important;
+    height: 100% !important;
   }
 
   .dropdown-item {
@@ -38,9 +44,11 @@ app-dropdown {
   //   color: black;
   // }
 
-  &.dropdown-primary {
+    &.dropdown-primary {
+
     .btn-dropdown {
       border-radius: 8px;
+      height: 40px !important;
       background-color: colors.$background;
       border: 1px solid #9E9E9E;
     }

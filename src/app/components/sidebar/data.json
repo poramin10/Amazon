@@ -1,0 +1,98 @@
+[
+  {
+    "nameMenu": "master",
+    "nameTotip": "master",
+    "iconMenu": "sidebar_master",
+    "iconMenuHover": "sidebar_master_hover",
+    "subMenu": [
+      {
+        "name": "PO Contact",
+        "url": "master/po_contact"
+      },
+      {
+        "name": "page2 (master)",
+        "url": "master/page2"
+      },
+      {
+        "name": "page3 (master)",
+        "url": "master/page3"
+      },
+      {
+        "name": "หน้าตัวอย่าง",
+        "url": "master/demopage"
+      },
+      {
+        "name": "ตัวอย่าง Template",
+        "url": "master/templatetheme"
+      },
+      {
+        "name": "ตัวอย่าง Form",
+        "url": "master/formtemplate"
+      }
+    ]
+  },
+  {
+    "nameMenu": "database",
+    "nameTotip": "database",
+    "iconMenu": "sidebar_database",
+    "iconMenuHover": "sidebar_database_hover",
+    "subMenu": [
+      {
+        "name": "page1 (database)",
+        "url": "database/page1"
+      },
+      {
+        "name": "page2 (database)",
+        "url": "database/page2"
+      }
+    ]
+  },
+  {
+    "nameMenu": "approval",
+    "nameTotip": "Approval & Maintain",
+    "iconMenu": "sidebar_approval",
+    "iconMenuHover": "sidebar_approval_hover",
+    "subMenu": [
+      {
+        "name": "page1 (Approval)",
+        "url": "approval/page1"
+      },
+      {
+        "name": "page2",
+        "url": "http"
+      },
+      {
+        "name": "page3",
+        "url": "http"
+      },
+      {
+        "name": "page4",
+        "url": "http"
+      },
+      {
+        "name": "page5",
+        "url": "http"
+      },
+      {
+        "name": "page6",
+        "url": "http"
+      },
+      {
+        "name": "page7",
+        "url": "http"
+      }
+    ]
+  },
+  {
+    "nameMenu": "kalaprocess",
+    "nameTotip": "kala process",
+    "iconMenu": "sidebar_process",
+    "iconMenuHover": "sidebar_process_hover",
+    "subMenu": [
+      {
+        "name": "Step 3 : %Defect (QA)",
+        "url": "kalaprocess/step3"
+      }
+    ]
+  }
+]

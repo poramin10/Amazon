@@ -5,14 +5,14 @@
       <div>
         <a class="navbar-brand" href="#"><img src="/assets/images/logo.png" alt=""></a>
         <a class="navbar-brand" href="#"><img src="/assets/images/text-logo.png" alt=""></a>
-        <img src="/assets/images/line.png" alt="">
+        <img height="32px" src="/assets/images/line.png" alt="">
       </div>
-      <h6 class="text-title ms-3">{{pageTitle}}</h6>
+      <h6 class="text-title ms-3">{{pageNameMenu | titlecase }} : {{pageTitle}}</h6>
     </div>
 
-    <div style="display: flex;">
+    <div style="display: flex; align-items: center;">
       <img style="height: 37px" src="/assets/images/logo2.png" alt="">
-      <img class="ms-3" src="/assets/images/line.png" alt="">
+      <img class="ms-3" height="32px" src="/assets/images/line.png" alt="">
       <app-button buttonText="นายอนุสร มากมี" iconPath="/assets/icons/profile.svg" class="profile ms-3">
       </app-button>
     </div>

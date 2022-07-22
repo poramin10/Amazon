@@ -1,0 +1,246 @@
+<div style="padding-top: 32px; padding-bottom: 32px;">
+
+  < Search <div class="card mt-3">
+    <div class="card-header">
+      Step 3 : %Defect (QA)
+    </div>
+    <div class="card-body">
+      <div class="row">
+        <div class="col-lg-3">
+          <app-input class="input-primary" labelName="Transaction No." placeholderInput="Transaction No."></app-input>
+        </div>
+      </div>
+
+      <hr class="my-3">
+
+      <h5 class="card-title">Information - %Defect</h5>
+
+      <div class="row">
+        <div class="col-lg-6">
+          <table class="table table-borderless">
+            <thead>
+              <tr>
+                <th class="thead-left col-2 text-center" scope="col">ลำดับ</th>
+                <th class="col-4" scope="col">รายการ</th>
+                <th class="col-3" scope="col">%Defect</th>
+                <th class="thead-right" class="" class="thead-right" scope="col"></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th class="text-center" scope="row">1</th>
+                <td>ความชื้นสินค้า</td>
+                <td style="color: #9E9E9E">%Defect</td>
+                <td>%</td>
+              </tr>
+              <tr>
+                <th class="text-center" scope="row">2</th>
+                <td>เกณฑ์ %HM</td>
+                <td>9.00 - 12.50</td>
+                <td>บาท/kg.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-lg-3">
+          <app-input class="input-primary" labelName="ประกาศราคาเลขที่" placeholderInput="ประกาศราคาเลขที่"></app-input>
+        </div>
+      </div>
+
+      <div class="row mt-3">
+        <div class="col-lg-12">
+          <table class="table table-borderless">
+            <thead>
+              <tr>
+                <th class="thead-left col-2 text-center" scope="col">Item</th>
+                <th class="col-4" scope="col">Material Code</th>
+                <th class="col-3" scope="col">Description</th>
+                <th class="col-3" scope="col">Plant</th>
+                <th class="thead-right" class="thead-right" scope="col">Sloc</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th class="text-center" scope="row">1</th>
+                <td>100511</td>
+                <td>%กะลากาแฟ อราบิก้า</td>
+                <td>L905</td>
+                <td>C002</td>
+              </tr>
+
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="row mt-3">
+        <div class="col-lg-12">
+          <table class="table table-borderless">
+            <thead>
+              <tr>
+                <th class="thead-left col-2 text-center" scope="col">ช่วงที่</th>
+                <th class="col-2" scope="col">%Defect</th>
+                <th class="col-1" scope="col">-</th>
+                <th class="col-2" scope="col">%Defect</th>
+                <th class="col-2" scope="col">=</th>
+                <th class="thead-right text-center" scope="col">ราคารับซื้อ (บาท/KG.)</th>
+              </tr>
+            </thead>
+            <tbody>
+
+              <tr *ngFor="let item of dataDemo ; let i = index">
+                <th class="text-center col-2" scope="row">{{i + 1}}</th>
+                <td>
+                  <span *ngIf="i == 0">0.00</span>
+                  <span *ngIf="i > 0 ">{{+this.dataDemo[i-1].defect + 0.01}}</span>
+                </td>
+                <td>-</td>
+                <td>{{item.defect | number : '1.2-2'}}</td>
+                <td>=</td>
+                <td class="text-center">{{item.price | number : '1.2-2'}}</td>
+              </tr>
+
+              <tr *ngIf="boolCheckClick == false else SuccessTable" style="vertical-align: middle;">
+                <th class="text-center col-2" scope="row">{{this.dataDemo.length + 1}}</th>
+                <td></td>
+                <td>-</td>
+                <td>
+                  <app-input class="input-primary" [control]="defect" typeInput="number" placeholderInput="%Defect">
+                  </app-input>
+                  <small *ngIf="checkError == true" class="text-danger">ข้อมูลต้องมากกว่าข้อมูลก่อนหน้า</small>
+                </td>
+
+                <td>=</td>
+                <td class="text-center">
+                  <app-input class="input-primary" [control]="price" typeInput="number"
+                    placeholderInput="ราคารับซื้อ (บาท/KG.)"></app-input>
+                </td>
+              </tr>
+
+              <ng-template #SuccessTable>
+                <tr>
+                  <th class="text-center col-2" scope="row">{{this.dataDemo.length + 1}}</th>
+                  <td>
+                    <span *ngIf="this.dataDemo.length == 0">0.00</span>
+                    <span *ngIf="this.dataDemo.length > 0 ">{{+this.dataDemo[this.dataDemo.length-1].defect +
+                      0.01}}</span>
+                  </td>
+                  <td>-</td>
+                  <td>ขึ้นไป</td>
+                  <td>=</td>
+                  <td class="text-center text-danger fw-bold">Reject</td>
+                </tr>
+              </ng-template>
+
+            </tbody>
+          </table>
+
+          <div class="row">
+            <div class="col-lg-12" style="display: flex; justify-content: space-between;">
+              <div>เกณฑ์ %HM: <span class="fw-bold">9.00 - 12.50 %HM </span> <span
+                  class="text-danger">อนุมัติเมื่อวันที่
+                  01.06.2022 (7:01 น.)
+                </span></div>
+              <div class="float-end">Transit Cost: <span class="fw-bold">2.00 บาท/KG </span> <span class="text-danger">
+                  อนุมัติเมื่อวันที่ 01.06.2022 (7:01 น.)
+                </span></div>
+            </div>
+          </div>
+
+          <div style="display: flex ; justify-content: center;">
+            <app-button [ngClass]="boolCheckClick == true ? 'disabled' : ''" class="primary me-3" (click)="addItem()"
+              buttonText="+"></app-button>
+            <app-button class="primary" (click)="deleteItem()" buttonText="-"></app-button>
+          </div>
+
+          <hr class="my-5">
+
+          <h5 class="card-title">Information - สรุปข้อมูลราคา</h5>
+
+          <div class="row">
+            <div class="col-lg-6">
+              <app-input class="input-primary" labelName="Transit Cost (บาท/kg.)" placeholderInput="Transit Cost">
+              </app-input>
+            </div>
+            <div class="col-lg-6">
+              <app-input class="input-primary" labelName="Surplus Price (บาท/kg.)" placeholderInput="Surplus Price">
+              </app-input>
+            </div>
+          </div>
+
+          <hr class="my-5">
+          <h5 class="card-title">Information - สรุปราคารับซื้อสุทธิ</h5>
+
+          <div class="row">
+            <div class="col-lg-3" style="position: relative;">
+              <app-input class="input-primary" placeholderInput="ราคารับซื้อสุทธิ"
+                labelName="ราคารับซื้อสุทธิ (บาท/kg.)">
+              </app-input>
+              <small style="color:#666666">ราคาตาม %Defect</small>
+              <div class="fixed-icons">
+                +
+              </div>
+            </div>
+            <div class="col-lg-3" style="position: relative;">
+              <label for=""></label>
+              <app-input class="input-primary" placeholderInput="ราคารับซื้อสุทธิ">
+              </app-input>
+              <small style="color:#666666">Transit Cost</small>
+              <div class="fixed-icons">
+                +
+              </div>
+            </div>
+            <div class="col-lg-3" style="position: relative;">
+              <label for=""></label>
+              <app-input class="input-primary" placeholderInput="ราคารับซื้อสุทธิ">
+              </app-input>
+              <small style="color:#666666">Surplus Price</small>
+              <div class="fixed-icons">
+                =
+              </div>
+            </div>
+            <div class="col-lg-3">
+              <app-input class="input-primary" placeholderInput="รวมราคาสุทธิ" labelName="รวมราคาสุทธิ">
+              </app-input>
+            </div>
+
+          </div>
+
+          <hr class="my-5">
+          <h5 class="card-title">เอกสารแนบ</h5>
+
+          <div class="row">
+            <div class="col-lg-6">
+              <app-input class="input-primary" placeholderInput="เลือกไฟล์" labelName="File 6 : ใบสรุปราคารับซื้อ">
+              </app-input>
+            </div>
+            <div class="col-lg-3">
+              <label for=""></label>
+              <app-button class="primary button-control" buttonText="อัพโหลด" iconPath="/assets/icons/upload.svg">
+              </app-button>
+            </div>
+            <div class="col-lg-3">
+              <label for=""></label>
+              <app-button class="primary-outline button-control" buttonText="ดาวน์โหลดไฟล์ template"></app-button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+</div>
+
+<div class="row mt-5">
+  <div class="col-lg-12" style="display: flex;
+  justify-content: center;">
+    <app-button class="primary disabled me-2" buttonText="ยืนยัน"></app-button>
+    <app-button class="primary-outline" buttonText="ยกเลิก"></app-button>
+  </div>
+</div>
+
+
+</div>

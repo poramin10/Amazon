@@ -16,9 +16,11 @@ export class InputComponent {
   @Input() idInput:string | undefined;
   // @Input() formControl:string | undefined;
   @Input() formControlName:string | undefined;
+  @Input() control = new FormControl();
   dataValue : string = ''
-  checkIcon : Boolean = false
-  @Input() nameFormControl:any = new FormControl('', [Validators.required]);
+  checkIcon : Boolean = false;
+
+
 
   constructor() { }
 
@@ -28,6 +30,7 @@ export class InputComponent {
   checkEvent(){
     console.log('OK')
     if(this.dataValue != ''){
+      // console.log(this.formControl)
       this.checkIcon = true;
     }else{
       this.checkIcon = false;

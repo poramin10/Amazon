@@ -38,8 +38,10 @@ app-input {
 
     }
 
+
     .form-control {
       border: 1px solid #9E9E9E;
+      border-radius: 8px;
       padding: .375rem 4px .375rem 8px;
       height: $height-sm  !important;
     }

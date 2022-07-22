@@ -5,12 +5,16 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 import { SharedModule } from './components/share-module';
 import { ThemesBaseComponent } from './template/themes-base/themes-base.component';
 import { DemopageComponent } from './template/demopage/demopage.component';
 import { RouterModule } from '@angular/router';
+import { NotfoundComponent } from './modules/notfound/notfound.component';
+import { AppState } from './app-state';
 
 
 @NgModule({
@@ -18,6 +22,7 @@ import { RouterModule } from '@angular/router';
     AppComponent,
     ThemesBaseComponent,
     DemopageComponent,
+    NotfoundComponent,
   ],
   imports: [
     BrowserModule,
@@ -26,9 +31,9 @@ import { RouterModule } from '@angular/router';
     RouterModule,
     FormsModule,
     SharedModule,
-
+    HttpClientModule,
   ],
-  providers: [],
+  providers: [AppState],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
