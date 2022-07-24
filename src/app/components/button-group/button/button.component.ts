@@ -8,8 +8,11 @@ import { Component, Input, OnInit } from '@angular/core';
 
 export class ButtonComponent {
 
+  // ? : ชื่อปุ่ม
   @Input() buttonText: string | undefined;
+  // ? : กำหนด icon ของปุ่ม
   @Input() iconPath: string | undefined;
+
   constructor() {}
 
   ngOnInit(): void {}

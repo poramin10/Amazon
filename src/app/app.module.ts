@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -17,6 +18,7 @@ import { NotfoundComponent } from './modules/notfound/notfound.component';
 import { AppState } from './app-state';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,12 +28,13 @@ import { AppState } from './app-state';
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
     NgbModule,
     RouterModule,
     FormsModule,
     SharedModule,
-    HttpClientModule,
+    HttpClientModule
   ],
   providers: [AppState],
   bootstrap: [AppComponent]

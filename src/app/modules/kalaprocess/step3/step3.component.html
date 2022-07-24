@@ -11,11 +11,11 @@
         </div>
       </div>
 
-      <hr class="my-3">
+      <hr class="my-4">
 
       <h5 class="card-title">Information - %Defect</h5>
 
-      <div class="row">
+      <div class="row mt-4">
         <div class="col-lg-6">
           <table class="table table-borderless">
             <thead>
@@ -45,7 +45,7 @@
         </div>
       </div>
 
-      <div class="row">
+      <div class="row my-4">
         <div class="col-lg-3">
           <app-input class="input-primary" labelName="ประกาศราคาเลขที่" placeholderInput="ประกาศราคาเลขที่"></app-input>
         </div>
@@ -96,7 +96,8 @@
                 <th style="position: relative ;" class="col-2 text-center" scope="row"> {{i + 1}} <div class="line-table-left"></div> </th>
                 <td class="line-table-bottom col-2">
                    <span *ngIf="i == 0">0.00</span>
-                  <span *ngIf="i > 0 ">{{+this.dataDemo[i-1].defect + 0.01}}</span>
+                  <!-- <span *ngIf="i > 0 ">{{+this.dataDemo[i-1].defect + 0.01}}</span> -->
+                  <span *ngIf="i > 0 ">{{(( +this.dataDemo[i-1].defect * 100) + 1 ) / 100 | number : '1.2-2'}}</span>
                 </td>
                 <td class="line-table-bottom col-1">-</td>
                 <td class="line-table-bottom col-2">{{item.defect | number : '1.2-2'}}</td>
@@ -109,8 +110,7 @@
                 <th class="text-center col-2" scope="row">{{this.dataDemo.length + 1}}</th>
                 <td>
                   <span *ngIf="this.dataDemo.length == 0">0.00</span>
-                  <span *ngIf="this.dataDemo.length > 0 ">{{+this.dataDemo[this.dataDemo.length-1].defect +
-                    0.01}}</span>
+                  <span *ngIf="this.dataDemo.length > 0 ">{{((+this.dataDemo[this.dataDemo.length-1].defect * 100) + 1 ) / 100 | number : '1.2-2'}}</span>
                 </td>
                 <td>-</td>
                 <td>
@@ -131,8 +131,7 @@
                   <th class="text-center col-2" scope="row">{{this.dataDemo.length + 1}}</th>
                   <td>
                     <span *ngIf="this.dataDemo.length == 0">0.00</span>
-                    <span *ngIf="this.dataDemo.length > 0 ">{{+this.dataDemo[this.dataDemo.length-1].defect +
-                      0.01}}</span>
+                    <span *ngIf="this.dataDemo.length > 0 ">{{((+this.dataDemo[this.dataDemo.length-1].defect * 100) + 1) / 100 | number : '1.2-2' }}</span>
                   </td>
                   <td>-</td>
                   <td>ขึ้นไป</td>

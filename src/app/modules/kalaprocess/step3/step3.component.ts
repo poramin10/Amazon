@@ -19,12 +19,10 @@ export class Step3Component implements OnInit {
 
   ngOnInit(): void {
   }
-  
+
   // ! ใส่บวกไว้หน้าตัวเลขเพื่อแปลง Text ตัวเลขที่เป็น String ให้เป็น Number เช่น +this.defect.value
   addItem() {
     if (this.defect.value == null || this.price.value == null || this.defect.value == '' || this.price.value == '') {
-      console.log('data',this.defect.value);
-
       this.boolCheckClick = true;
       this.defect.setValue('');
       this.price.setValue('');
@@ -32,24 +30,26 @@ export class Step3Component implements OnInit {
 
       if(this.dataDemo.length != 0){
         const dataOld = this.dataDemo[this.dataDemo.length - 1].defect;
-        if(dataOld < +this.defect.value){
-          console.log('เข้า if')
+        console.log(this.defect.value)
+        if(dataOld < + this.defect.value && this.defect.value >= 0){
           this.dataDemo.push({
             "defect": +this.defect.value,
             "price": +this.price.value,
           })
           this.checkError = false;
         }else{
-
-          console.log('เข้า else')
           this.checkError = true;
         }
       }else{
-        this.dataDemo.push({
-          "defect": +this.defect.value,
-          "price": +this.price.value,
-        })
-        this.checkError = false;
+        if(this.defect.value >= 0){
+          this.dataDemo.push({
+            "defect": +this.defect.value,
+            "price": +this.price.value,
+          })
+          this.checkError = false;
+        }else{
+          this.checkError = true;
+        }
       }
       this.defect.setValue('');
       this.price.setValue('');

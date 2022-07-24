@@ -76,3 +76,35 @@ td,th{
 }
 
 // ? END TABLE
+
+// ? START Paginator
+
+::ng-deep .p-paginator {
+  display: block !important;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+::ng-deep .p-paginator .p-paginator-first,
+::ng-deep .p-paginator .p-paginator-prev,
+::ng-deep .p-paginator .p-paginator-next,
+::ng-deep .p-paginator .p-paginator-last {
+  background-color: transparent;
+  border: 0 none;
+  color: #6c757d;
+  min-width: 0 !important;
+  height: 3rem;
+  margin: 0 !important;
+  transition: box-shadow 0.2s;
+  border-radius: 50%;
+}
+
+.fixed-paginator{
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 40px 15px 10px 15px;
+}
+
+// ? END Paginator

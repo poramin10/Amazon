@@ -32,7 +32,6 @@ app-dropdown {
 
   .dropdown-menu {
     width: 100% !important;
-    height: 100% !important;
   }
 
   .dropdown-item {
@@ -48,9 +47,10 @@ app-dropdown {
 
     .btn-dropdown {
       border-radius: 8px;
-      height: 40px !important;
+      height: 42px !important;
       background-color: colors.$background;
       border: 1px solid #9E9E9E;
+      padding: 13px 8px !important;
     }
 
     .btn-dropdown:hover{
