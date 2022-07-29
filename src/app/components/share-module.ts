@@ -9,6 +9,7 @@ import { InputComponent } from './input-group/input/input.component';
 import { DropdownComponent } from './dropdown-group/dropdown/dropdown.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { InputDateComponent } from './input-group/input-date/input-date.component';
 
 
 @NgModule({
@@ -24,14 +25,17 @@ import { NavbarComponent } from './navbar/navbar.component';
     ButtonComponent,
     DropdownComponent,
     SidebarComponent,
-    NavbarComponent
+    NavbarComponent,
+    InputDateComponent
   ],
   exports: [
     InputComponent,
     ButtonComponent,
     DropdownComponent,
     SidebarComponent,
-    NavbarComponent
+    NavbarComponent,
+    InputDateComponent
   ],
+
 })
 export class SharedModule {}

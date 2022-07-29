@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl } from '@angular/forms';
 
 export interface Data {
   id: number;
@@ -15,6 +16,8 @@ export class TemplateComponent implements OnInit {
   selectedData: any = '';
 
   data: Map<any, any> = new Map<string, any>();
+
+  dataData = new FormControl();
 
   ngOnInit(): void {
     // this.data = [res]
@@ -38,5 +41,13 @@ export class TemplateComponent implements OnInit {
   check(){
     console.log('click')
   }
+
+  checkDate(dataData:any){
+    console.log(dataData)
+  }
+
+
+
+
 
 }

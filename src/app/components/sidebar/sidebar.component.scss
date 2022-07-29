@@ -71,7 +71,7 @@
 }
 
 // ::ng-deep .tooltip-inner{
-
+//   // z-index: -1;
 // }
 
 .card{
@@ -90,3 +90,14 @@ a {
 .menu-active.card-menu{
     background-color:#F0D193 !important;
 }
+
+// ::ng-deep .bs-tooltip-auto[data-popper-placement=right]
+// ::ng-deep .tooltip-arrow::before,
+// ::ng-deep .bs-tooltip-end,
+// ::ng-deep .tooltip-arrow::before{
+//   right: -1px;
+//   border-width: .4rem .4rem .4rem 0;
+//   border-right-color: white !important;
+
+// }
+

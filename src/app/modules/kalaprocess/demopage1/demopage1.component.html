@@ -25,12 +25,12 @@
         </div>
         <div class="col-lg-2">
           <label for=""></label>
-          <app-button class="primary button-control me-2" iconPath="/assets/icons/search.svg" buttonText="ค้นหา">
+          <app-button class="primary block me-2" iconPath="/assets/icons/search.svg" buttonText="ค้นหา">
           </app-button>
         </div>
         <div class="col-lg-2">
           <label for=""></label>
-          <app-button class="primary-outline button-control me-2" buttonText="ล้างค่า"></app-button>
+          <app-button class="primary-outline block me-2" buttonText="ล้างค่า"></app-button>
         </div>
       </div>
 
@@ -51,7 +51,7 @@
               </tr>
             </thead>
             <tbody>
-              <tr *ngFor="let data of dataDemo">
+              <tr *ngFor="let data of dataDemo | slice:first:pageNumber * 10; ">
                 <th style="position: relative ;" class="text-center" scope="row"><img src="/assets/icons/eye.svg"
                     alt="">
                   <div class="line-table-left"></div>
@@ -68,9 +68,9 @@
             <td colspan="7">
               <span class="w-100">
                 <div class="fixed-paginator">
-                  <p-paginator [first]="1" [rows]="1" [totalRecords]="100" [showJumpToPageDropdown]="true"
+                  <p-paginator [first]="1" [rows]="10" [totalRecords]="totalData" (onPageChange)="onPageChange($event)" [showJumpToPageDropdown]="true"
                     [showPageLinks]="false"></p-paginator>
-                  <small style="color:#999999">1 of 56 Items</small>
+                  <small style="color:#999999"> 1 of 56 Items</small>
                 </div>
 
               </span>

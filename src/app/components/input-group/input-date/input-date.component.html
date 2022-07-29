@@ -1,0 +1,13 @@
+<label class="fw-bold" *ngIf="labelName" for="">{{ labelName }}</label>
+<div class="input-form">
+  <input [value]="control.value" [(ngModel)]="dataValue" name="{{nameInput}}" type="{{typeInput}}"
+    placeholder="YYYY/mm/dd" class="form-control" (input)="checkEvent()">
+    <div *ngIf="control.value != null " class="icon-clear">
+      <img (click)="clearInput()" src="assets/icons/clear.svg" alt="">
+    </div>
+    <span class="datepicker-toggle">
+      <span class="datepicker-toggle-button"></span>
+      <input [formControl]="control" (change)="checkDate()" type="date" class="datepicker-input">
+    </span>
+</div>
+
