@@ -37,8 +37,10 @@ thead tr .thead-right {
   border-radius: 0px 8px 0px 0px;
 }
 
-thead{
+.table-fixed thead{
   color: #ffff;
+  border-radius: 8px 8px 0px 0px;
+  border-bottom: none ;
 }
 
 .lineTable hr {
@@ -50,10 +52,7 @@ thead{
   padding: .0rem 24px !important;
 }
 tr{
-  padding: 10px;
-}
-td,th{
-  // border-bottom: 1px solid #F1F1F1
+  padding: 0px 10px;
 }
 
 .line-table-left{
@@ -73,6 +72,38 @@ td,th{
 
 .line-table-bottom{
   border-bottom: 1px solid #F1F1F1;
+}
+
+
+.table-fixed tbody {
+  height: 420px;
+  overflow-y: auto;
+  width: 100%;
+}
+
+.table-fixed thead,
+.table-fixed tbody,
+.table-fixed tr,
+.table-fixed td,
+.table-fixed th {
+  display:block;
+}
+
+.table-fixed tr{
+  display: flex;
+}
+
+.table-fixed tbody td,
+.table-fixed tbody th,
+.table-fixed thead > tr > th {
+  float: left;
+  position: relative;
+
+  &::after {
+      content: '';
+      clear: both;
+      display: block;
+  }
 }
 
 // ? END TABLE
@@ -104,7 +135,7 @@ td,th{
   display:flex;
   justify-content: space-between;
   align-items: center;
-  padding: 40px 15px 10px 15px;
+  padding: 12px 15px 10px 15px;
 }
 
 // ? END Paginator

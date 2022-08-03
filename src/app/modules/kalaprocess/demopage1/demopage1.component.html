@@ -38,44 +38,47 @@
 
       <div class="row">
         <div class="col-lg-12">
-          <table class="table table-borderless">
-            <thead>
-              <tr>
-                <th class="thead-left col-1 text-center">View</th>
-                <th class="text-center col-2">Transaction no.</th>
-                <th class="text-center col-2">Document Date</th>
-                <th class="text-center col-2">PO Contract</th>
-                <th class="text-center col-1">Round</th>
-                <th class="text-center col-2">Item</th>
-                <th class="thead-right" class="thead-right">Purchasing Point</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr *ngFor="let data of dataDemo | slice:first:pageNumber * 10; ">
-                <th style="position: relative ;" class="text-center" scope="row"><img src="/assets/icons/eye.svg"
-                    alt="">
-                  <div class="line-table-left"></div>
-                </th>
-                <td class="text-center line-table-bottom">{{data.TransactionNo}}</td>
-                <td class="text-center line-table-bottom">{{data.DocumentDate}}</td>
-                <td class="text-center line-table-bottom">{{data.POContract}}</td>
-                <td class="text-center line-table-bottom ">{{data.Round}}</td>
-                <td class="text-center line-table-bottom">{{data.Item}}</td>
-                <td style="position: relative ;">{{data.PurchasingPoint}}<div class="line-table-right"></div>
-                </td>
-              </tr>
-            </tbody>
-            <td colspan="7">
-              <span class="w-100">
-                <div class="fixed-paginator">
-                  <p-paginator [first]="1" [rows]="10" [totalRecords]="totalData" (onPageChange)="onPageChange($event)" [showJumpToPageDropdown]="true"
-                    [showPageLinks]="false"></p-paginator>
-                  <small style="color:#999999"> 1 of 56 Items</small>
-                </div>
 
-              </span>
-            </td>
-          </table>
+          <div class="table-responsive">
+            <table class="table table-borderless table-fixed">
+              <thead>
+                <tr>
+                  <th class="thead-left col-1">View</th>
+                  <th class="text-center col-2">Transaction no.</th>
+                  <th class="text-center col-2">Document Date</th>
+                  <th class="text-center col-2">PO Contract</th>
+                  <th class="text-center col-1">Round</th>
+                  <th class="text-center col-2">Item</th>
+                  <th class="col-2" class="thead-right" class="thead-right">Purchasing Point</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let data of dataDemo | slice:first:pageNumber * 10; ">
+                  <th class="text-center col-1" scope="row">
+                    <img width="20px" src="/assets/icons/eye.svg" alt="">
+                    <div class="line-table-left"></div>
+                  </th>
+                  <td class="text-center line-table-bottom col-2">{{data.TransactionNo}}</td>
+                  <td class="text-center line-table-bottom col-2">{{data.DocumentDate}}</td>
+                  <td class="text-center line-table-bottom col-2">{{data.POContract}}</td>
+                  <td class="text-center line-table-bottom col-1">{{data.Round}}</td>
+                  <td class="text-center line-table-bottom col-2">{{data.Item}}</td>
+                  <td class="col-2">{{data.PurchasingPoint}}<div class="line-table-right"></div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+
+            <span class="w-100">
+              <div class="fixed-paginator">
+                <p-paginator [first]="1" [rows]="10" [totalRecords]="totalData" (onPageChange)="onPageChange($event)" [showJumpToPageDropdown]="true"
+                  [showPageLinks]="false"></p-paginator>
+                <small style="color:#999999"> 1 of 56 Items</small>
+              </div>
+            </span>
+
+          </div>
+
         </div>
       </div>
 
