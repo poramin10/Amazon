@@ -64,6 +64,8 @@ app-input {
   }
 
   &.input-primary {
+
+
     input {
       border: none !important;
       box-shadow: none !important;
@@ -75,6 +77,10 @@ app-input {
       display: flex;
       align-items: center;
       border-radius: .25rem;
+
+      &.border-focus{
+        border: 1px solid #FAB81D !important;
+      }
 
       &:hover {
         border: 1px solid #FAB81D !important;

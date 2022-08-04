@@ -20,19 +20,25 @@ export class InputComponent {
   dataValue : string = ''
   checkIcon : Boolean = true;
 
+  // Set สีของ Border
+  checkInputFocus : boolean = false;
 
   constructor() { }
 
   ngOnInit(): void {
   }
 
-  checkEvent(){
-
-  }
-
+  // ! Clear Input
   clearInput(){
     this.control.setValue('');
   }
 
+  // ! Check Focus Border
+  focus(){
+    this.checkInputFocus = true;
+  }
+  focuslost(){
+    this.checkInputFocus = false;
+  }
 
 }

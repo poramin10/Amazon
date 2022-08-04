@@ -8,25 +8,27 @@ import { FormControl, Validators } from '@angular/forms';
 })
 export class FromtemplateComponent implements OnInit {
 
-  @ViewChild('input_firstname') input_firstname!:any;
-  @ViewChild('input_lastname') input_lastname!:any;
-
   firstname = new FormControl();
   lastname = new FormControl();
+  showFirstname = '';
+  showLastname = '';
 
   ngOnInit(): void {
   }
 
-  AddData(){
+  AddData() {
     console.log(this.firstname.value)
     console.log(this.lastname.value)
-    console.log('clear')
-    this.firstname.setValue('');
-    this.lastname.setValue('');
 
-    this.input_firstname.clearInput();
-    this.input_lastname.clearInput();
-    // this.input_lastname.clearInput();
+    // Clear value
+    this.showFirstname = this.firstname.value;
+    this.showLastname = this.lastname.value;
+
+    // Clear value
+    this.firstname.setValue('')
+    this.lastname.setValue('')
+
+
   }
 
 
