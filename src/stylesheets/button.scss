@@ -6,7 +6,10 @@ app-button {
 
   font-weight: bold;
 
+  // ! ขนาด sm
   $button-padding-sm: 8px 35px;
+  $button-padding-sm-icon: 8px 0px;
+
   $button-padding-md: 12px 35px;
   $button-padding-lg: 16px 35px;
 
@@ -23,6 +26,8 @@ app-button {
       background-color: bc.$primary-default;
       opacity: emp.$disable-emp;
     }
+
+
   }
 
   cursor: pointer;
@@ -63,7 +68,9 @@ app-button {
     &.sm {
       padding: $button-padding-sm;
     }
-
+    &.sm-icon{
+      padding: $button-padding-sm-icon
+    }
     &.md {
       padding: $button-padding-md;
     }
@@ -141,7 +148,6 @@ app-button {
     }
 
     &.disabled {
-      background-color: bc.$primary-default;
       opacity: emp.$disable-emp;
     }
   }

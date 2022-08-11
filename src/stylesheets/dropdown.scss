@@ -9,6 +9,7 @@ app-dropdown {
     font-weight: bold;
   }
 
+
   .btn-dropdown {
     display: flex;
     font-weight: 400;
@@ -36,6 +37,10 @@ app-dropdown {
 
   .dropdown-item {
     padding: 9px 8px !important;
+  }
+
+  .placeholderColor span{
+    color:#9E9E9E !important
   }
 
   // .dropdown-item:hover {

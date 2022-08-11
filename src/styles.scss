@@ -19,3 +19,50 @@
 body{
   font-family: fonts.$Sarabun !important;
 }
+
+//! Sweat Alert
+#swal2-html-container {
+  overflow: hidden;
+}
+
+#spinning-circle {
+  animation-name: rotate;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  border-radius: 50%;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(-360deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.swal2-popup {
+  display: none;
+  position: relative;
+  box-sizing: border-box;
+  grid-template-columns: minmax(0, 100%);
+  width: 32em;
+  max-width: 100%;
+  padding: 1.25em !important;
+  border: none;
+  border-radius: 20px !important;
+  background: #fff;
+  color: #545454;
+  font-family: inherit;
+  font-size: 1rem;
+}
+
+.swal2-styled.swal2-cancel {
+  border: solid 1px #f2c94c !important;
+  border-radius: 0.25em;
+  background: initial;
+  background-color: #6e7881;
+  color: #fff;
+}
+

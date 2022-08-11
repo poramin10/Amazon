@@ -22,6 +22,7 @@ export class DropdownComponent implements OnInit {
   @Input() datas!: Map<string, any>;
   @Output() selectedEvent = new EventEmitter();
   @Input() selectedValue?:any = '';
+  @Input() placeholderDropdown = 'กรุณาเลือก Dropdown';
 
   ngOnInit(): void {
     // console.log("Data: ",this.datas);

@@ -5,6 +5,7 @@ import { BehaviorSubject, Observable } from 'rxjs';
 export class AppState {
   pageNameMenu:BehaviorSubject<string> = new BehaviorSubject<string>('');
   pageTitle:BehaviorSubject<string> = new BehaviorSubject<string>('');
+  JwtCheck:BehaviorSubject<string> = new BehaviorSubject<string>('');
 
   pageTitleAsObservable(){
     return this.pageTitle.asObservable();
@@ -13,6 +14,11 @@ export class AppState {
   pageNameMenuAsObservable(){
     return this.pageNameMenu.asObservable();
   }
+
+  JwtCheckAsObservable(){
+    return this.JwtCheck.asObservable();
+  }
+
 }
 
 

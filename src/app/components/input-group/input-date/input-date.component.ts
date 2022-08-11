@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
+import { DatePipe } from '@angular/common';
 
 @Component({
   selector: 'app-input-date',
@@ -20,12 +21,9 @@ export class InputDateComponent {
   dataValue : string = ''
   checkIcon : Boolean = true;
 
-
   constructor() { }
 
   ngOnInit(): void {
-    console.log(this.control.value)
-
   }
 
   checkEvent(){
@@ -38,6 +36,7 @@ export class InputDateComponent {
 
   checkDate(){
     console.log(this.control.value)
+    this.control.setValue(new DatePipe('en-US').transform(this.control.value, 'yyyy/MM/dd'))
     // this.pipe.transform(this.control.value,)
   }
 

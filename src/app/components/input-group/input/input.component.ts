@@ -30,6 +30,7 @@ export class InputComponent {
 
   // ! Clear Input
   clearInput(){
+    console.log('Test')
     this.control.setValue('');
   }
 

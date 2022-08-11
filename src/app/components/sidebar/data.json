@@ -6,6 +6,10 @@
     "iconMenuHover": "sidebar_master_hover",
     "subMenu": [
       {
+        "name": "Material",
+        "url": "master/material"
+      },
+      {
         "name": "PO Contact",
         "url": "master/po_contact"
       },

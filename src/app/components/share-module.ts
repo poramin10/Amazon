@@ -10,6 +10,8 @@ import { DropdownComponent } from './dropdown-group/dropdown/dropdown.component'
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { InputDateComponent } from './input-group/input-date/input-date.component';
+import { InputFileComponent } from './input-group/input-file/input-file.component';
+import { DropdownStatusComponent } from './dropdown-group/dropdown-status/dropdown-status.component';
 
 
 @NgModule({
@@ -26,7 +28,9 @@ import { InputDateComponent } from './input-group/input-date/input-date.componen
     DropdownComponent,
     SidebarComponent,
     NavbarComponent,
-    InputDateComponent
+    InputDateComponent,
+    InputFileComponent,
+    DropdownStatusComponent
   ],
   exports: [
     InputComponent,
@@ -34,7 +38,9 @@ import { InputDateComponent } from './input-group/input-date/input-date.componen
     DropdownComponent,
     SidebarComponent,
     NavbarComponent,
-    InputDateComponent
+    InputDateComponent,
+    InputFileComponent,
+    DropdownStatusComponent
   ],
 
 })

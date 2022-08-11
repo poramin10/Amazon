@@ -7,7 +7,7 @@ import { AppComponent } from './app.component';
 
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
-import { FormsModule } from '@angular/forms';
+import { FormsModule , ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
 import { SharedModule } from './components/share-module';
@@ -17,7 +17,9 @@ import { RouterModule } from '@angular/router';
 import { NotfoundComponent } from './modules/notfound/notfound.component';
 import { AppState } from './app-state';
 
-// Material
+// NGX Bootstrap
+import { ModalModule } from 'ngx-bootstrap/modal';
+import { LoginComponent } from './modules/account/login/login.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +27,7 @@ import { AppState } from './app-state';
     ThemesBaseComponent,
     DemopageComponent,
     NotfoundComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -32,9 +35,11 @@ import { AppState } from './app-state';
     AppRoutingModule,
     NgbModule,
     RouterModule,
-    FormsModule,
     SharedModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule,
+    ModalModule.forRoot(),
   ],
   providers: [AppState],
   bootstrap: [AppComponent]

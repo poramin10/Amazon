@@ -25,7 +25,7 @@ export class SidebarComponent implements OnInit {
 
   ngOnInit(): void {
     const urlBase = window.location.href.split('/')
-    this.menuActive = urlBase[3];
+    this.menuActive = urlBase[3].toLocaleLowerCase();
   }
 
   @HostListener('document:click', ['$event'])

@@ -73,14 +73,11 @@ tr{
 .line-table-bottom{
   border-bottom: 1px solid #F1F1F1;
 }
-
-
 .table-fixed tbody {
   height: 420px;
   overflow-y: auto;
   width: 100%;
 }
-
 .table-fixed thead,
 .table-fixed tbody,
 .table-fixed tr,
@@ -88,24 +85,20 @@ tr{
 .table-fixed th {
   display:block;
 }
-
 .table-fixed tr{
   display: flex;
 }
-
 .table-fixed tbody td,
 .table-fixed tbody th,
 .table-fixed thead > tr > th {
   float: left;
   position: relative;
-
   &::after {
       content: '';
       clear: both;
       display: block;
   }
 }
-
 // ? END TABLE
 
 // ? START Paginator

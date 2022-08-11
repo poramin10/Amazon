@@ -13,11 +13,7 @@ export interface Data {
 })
 export class TemplateComponent implements OnInit {
 
-  selectedData: any = '';
-
   data: Map<any, any> = new Map<string, any>();
-
-  dataData = new FormControl();
 
   ngOnInit(): void {
     // this.data = [res]
@@ -35,16 +31,12 @@ export class TemplateComponent implements OnInit {
   selectedCustomerValue(value: any) {
     console.log("ได้รับ Data => ",value)
     //this.increaseSecondState()
-
   }
 
   check(){
     console.log('click')
   }
 
-  checkDate(dataData:any){
-    console.log(dataData)
-  }
 
 
 

@@ -1,0 +1,111 @@
+.modal-header{
+  background-color: #182317 !important;
+  color: white !important;
+}
+
+.modal-body{
+  padding: 32px !important;
+}
+
+// ? START CARD
+.card-header {
+  border-radius: 8px 8px 0px 0px !important;
+  background-color: #273D26 !important;
+  color: white;
+}
+
+.card {
+  margin-right: 42px !important;
+  border-radius: 8px 8px 0px 0px !important;
+}
+
+.card-title{
+  font-weight: bold;
+}
+
+.card-body {
+  padding: 1rem 2rem !important;
+}
+
+// ? END CARD
+
+// ? START TABLE
+table{
+  border: 1px solid #F1F1F1;
+  border-radius: 8px 8px 0px 0px !important;
+}
+
+thead {
+  background-color: #456B44;
+}
+
+thead tr .thead-left {
+  border-radius: 8px 0px 0px 0px;
+}
+thead tr .thead-right {
+  border-radius: 0px 8px 0px 0px;
+}
+
+.table-fixed thead{
+  color: #ffff;
+  border-radius: 8px 8px 0px 0px;
+  border-bottom: none ;
+}
+
+.lineTable hr {
+  margin : 0px !important
+}
+
+.table>:not(caption)>*>.lineTable{
+  opacity: 0.2;
+  padding: .0rem 24px !important;
+}
+tr{
+  padding: 0px 10px;
+}
+
+.line-table-left{
+  border-bottom: 1px solid #F1F1F1;
+  position: absolute;
+  left: 15px;
+  bottom: 0;
+  width:100%;
+}
+.line-table-right{
+  border-bottom: 1px solid #F1F1F1;
+  position: absolute;
+  right: 15px;
+  bottom: 0;
+  width:100%;
+}
+
+.line-table-bottom{
+  border-bottom: 1px solid #F1F1F1;
+}
+.table-fixed tbody {
+  height: 420px;
+  overflow-y: auto;
+  width: 100%;
+}
+.table-fixed thead,
+.table-fixed tbody,
+.table-fixed tr,
+.table-fixed td,
+.table-fixed th {
+  display:block;
+}
+.table-fixed tr{
+  display: flex;
+}
+.table-fixed tbody td,
+.table-fixed tbody th,
+.table-fixed thead > tr > th {
+  float: left;
+  position: relative;
+  &::after {
+      content: '';
+      clear: both;
+      display: block;
+  }
+}
+// ? END TABLE
