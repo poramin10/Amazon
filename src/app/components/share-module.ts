@@ -40,7 +40,9 @@ import { DropdownStatusComponent } from './dropdown-group/dropdown-status/dropdo
     NavbarComponent,
     InputDateComponent,
     InputFileComponent,
-    DropdownStatusComponent
+    DropdownStatusComponent,
+    
+
   ],
 
 })

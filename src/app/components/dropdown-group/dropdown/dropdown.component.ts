@@ -8,6 +8,8 @@ import {
   Output,
 } from '@angular/core';
 
+import { FormControl } from '@angular/forms';
+
 
 @Component({
   selector: 'app-dropdown',
@@ -23,6 +25,8 @@ export class DropdownComponent implements OnInit {
   @Output() selectedEvent = new EventEmitter();
   @Input() selectedValue?:any = '';
   @Input() placeholderDropdown = 'กรุณาเลือก Dropdown';
+
+  @Input() control = new FormControl();
 
   ngOnInit(): void {
     // console.log("Data: ",this.datas);

@@ -7,30 +7,28 @@ import { Router } from '@angular/router';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
-  isLogin:any = '';
+  checkLogin:any = '';
 
   constructor(
     private appState: AppState,
     private router: Router
   ){
     this.appState.JwtCheckAsObservable().subscribe((res) => {
-      this.isLogin = res;
+      this.checkLogin = res;
+      this.isLogin();
     });
   }
 
   ngOnInit(): void {
-
-    if(sessionStorage.getItem('jwt')){
-      this.appState.JwtCheck.next(sessionStorage.getItem('jwt')!)
-      this.router.navigate(['master/material'], {
-        replaceUrl: true,
-      });
-    }
-
     this.appState.JwtCheck.subscribe();
-    this.isLogin = this.appState.JwtCheck.value
+    this.checkLogin = this.isLogin()
   }
 
   title = 'amazon';
+
+  // TODO Login แล้วสถานะเป็น True
+  isLogin():boolean{
+    return sessionStorage.getItem('jwt') != null;
+  }
 
 }

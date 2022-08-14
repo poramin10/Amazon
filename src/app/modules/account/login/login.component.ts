@@ -43,6 +43,12 @@ export class LoginComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    if(sessionStorage.getItem('jwt')){
+      this.appState.JwtCheck.next(sessionStorage.getItem('jwt')!)
+      this.router.navigate(['master/material'], {
+        replaceUrl: true,
+      });
+    }
   }
 
   getFormControlByKey(key: string) {

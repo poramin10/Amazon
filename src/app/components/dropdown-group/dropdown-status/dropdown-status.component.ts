@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
 
 @Component({
@@ -10,7 +10,7 @@ export class DropdownStatusComponent implements OnInit {
 
   selectedData: any = '';
   data: Map<any, any> = new Map<string, any>();
-  dataData = new FormControl();
+  @Input() statusData = new FormControl();
 
   constructor() { }
 
@@ -23,6 +23,7 @@ export class DropdownStatusComponent implements OnInit {
   /** Function สำหรับเลือกลูกค้าที่ต้องการลงทะเบียนเข้าตรวจ */
   selectedCustomerValue(value: any) {
     console.log("ได้รับ Data => ", value)
+    console.log("statusData:", this.statusData.value)
     //this.increaseSecondState()
   }
 
