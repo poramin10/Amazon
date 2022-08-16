@@ -5,10 +5,10 @@
  */
 export interface User {
   id: number;
-  username: string;
+  username?: string;
   password?: string;
   jwt?: string;
-  firstname: string;
-  lastname: string;
+  firstname?: string;
+  lastname?: string;
   // roles: Role[];
 }

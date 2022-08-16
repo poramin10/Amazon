@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormControl } from '@angular/forms';
 
 @Component({
@@ -11,21 +11,26 @@ export class DropdownStatusComponent implements OnInit {
   selectedData: any = '';
   data: Map<any, any> = new Map<string, any>();
   @Input() statusData = new FormControl();
+  @Output() selectedEvent = new EventEmitter();
+
 
   constructor() { }
 
   ngOnInit(): void {
     // ! 0 InActive : 1 Active
-    this.data.set('Active','Active');
-    this.data.set('Inactive','Inactive');
+    // TODO เปลี่ยนเป็น True false
+    this.data.set('Active',true);
+    this.data.set('Inactive',false);
+
+    this.selectedData = this.isCheckValueStatus();
   }
 
-  /** Function สำหรับเลือกลูกค้าที่ต้องการลงทะเบียนเข้าตรวจ */
-  selectedCustomerValue(value: any) {
-    console.log("ได้รับ Data => ", value)
-    console.log("statusData:", this.statusData.value)
-    //this.increaseSecondState()
+  isCheckValueStatus(){
+    if(this.statusData.value == null){
+      return null;
+    }else{
+      return this.statusData.value ? "Active" : "Inactive";
+    }
   }
-
 
 }

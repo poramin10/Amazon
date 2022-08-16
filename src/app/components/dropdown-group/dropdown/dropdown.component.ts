@@ -29,12 +29,11 @@ export class DropdownComponent implements OnInit {
   @Input() control = new FormControl();
 
   ngOnInit(): void {
-    // console.log("Data: ",this.datas);
   }
 
   clickSelect(data:any){
-    this.selectedValue = this.datas.get(data);
-    this.selectedEvent.emit(data)
+    this.selectedValue = data.key;
+    this.control.setValue(data.value)
   }
 
 }

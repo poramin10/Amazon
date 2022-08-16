@@ -9,7 +9,6 @@ app-dropdown {
     font-weight: bold;
   }
 
-
   .btn-dropdown {
     display: flex;
     font-weight: 400;
@@ -48,7 +47,7 @@ app-dropdown {
   //   color: black;
   // }
 
-    &.dropdown-primary {
+  &.dropdown-primary {
 
     .btn-dropdown {
       border-radius: 8px;
@@ -97,6 +96,76 @@ app-dropdown {
 
   }
 
+}
 
+app-dropdown-select {
+    .form-select {
+      display: flex;
+      font-weight: 400;
+      line-height: 1.5;
+      color: #212529;
+      // text-align: center;
+      text-decoration: none;
+      vertical-align: middle;
+      cursor: pointer;
+      -webkit-user-select: none;
+      user-select: none;
+      background-color: transparent;
+      border: 1px solid transparent;
+      padding: .375rem .75rem;
+      font-size: 1rem;
+      border-radius: .25rem;
+      transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+      align-items: center;
+      justify-content: space-between;
+  }
 
+  &.dropdown-primary {
+
+    .btn-dropdown {
+      border-radius: 8px;
+      height: 42px !important;
+      background-color: colors.$background;
+      border: 1px solid #9E9E9E;
+      padding: 13px 8px !important;
+    }
+
+    .btn-dropdown:hover{
+      border: 1px solid #FAB81D !important;
+    }
+
+    .dropdown-item:focus,
+    .dropdown-item:hover {
+      color: #1e2125;
+      background-color: #F0D193 !important;
+    }
+
+    &.disabled{
+      pointer-events: none;
+      -webkit-touch-callout: none;
+    /* iOS Safari */
+    -webkit-user-select: none;
+    /* Safari */
+    -khtml-user-select: none;
+    /* Konqueror HTML */
+    -moz-user-select: none;
+    /* Old versions of Firefox */
+    -ms-user-select: none;
+    /* Internet Explorer/Edge */
+    user-select: none;
+      label{
+        color: #9E9E9E;
+      }
+      .btn-dropdown {
+        cursor: not-allowed !important;
+        background-color: btn.$disabled;
+        border: 1px solid btn.$disabled-border;
+        color: #9E9E9E;
+        .icon-flex{
+          opacity: emp.$disable-emp;
+        }
+      }
+    }
+
+  }
 }

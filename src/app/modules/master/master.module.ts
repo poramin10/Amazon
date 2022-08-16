@@ -11,12 +11,30 @@ import { TemplateComponent } from './templateTheme/template.component';
 import { FromtemplateComponent } from './fromtemplate/fromtemplate.component';
 import { PoContractComponent } from './po-contract/po-contract.component';
 import { MaterialComponent } from './material/material.component';
+import { MasterState } from './master-state';
+
 
 
 @NgModule({
-  declarations: [ Page1Component, Page2Component, Page3Component, DemopageComponent, TemplateComponent, FromtemplateComponent, PoContractComponent, MaterialComponent ],
-  imports: [CommonModule, ReactiveFormsModule , MasterRoutingModule , SharedModule ],
-  providers: [],
+  declarations: [
+    Page1Component,
+    Page2Component,
+    Page3Component,
+   DemopageComponent,
+   TemplateComponent,
+   FromtemplateComponent,
+   PoContractComponent,
+   MaterialComponent,
+  ],
+  imports: [
+    CommonModule,
+    ReactiveFormsModule,
+    MasterRoutingModule,
+    SharedModule,
+  ],
+  providers: [
+    MasterState
+  ],
   exports: [
     Page3Component,
     DemopageComponent,
@@ -25,4 +43,4 @@ import { MaterialComponent } from './material/material.component';
     MaterialComponent
   ],
 })
-export class MasterModule {}
+export class MasterModule { }

@@ -12,6 +12,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { InputDateComponent } from './input-group/input-date/input-date.component';
 import { InputFileComponent } from './input-group/input-file/input-file.component';
 import { DropdownStatusComponent } from './dropdown-group/dropdown-status/dropdown-status.component';
+import { DropdownSelectComponent } from './dropdown-group/dropdown-select/dropdown-select.component';
 
 
 @NgModule({
@@ -20,7 +21,7 @@ import { DropdownStatusComponent } from './dropdown-group/dropdown-status/dropdo
     ReactiveFormsModule,
     FormsModule,
     NgbModule,
-    RouterModule
+    RouterModule,
   ],
   declarations: [
     InputComponent,
@@ -30,7 +31,8 @@ import { DropdownStatusComponent } from './dropdown-group/dropdown-status/dropdo
     NavbarComponent,
     InputDateComponent,
     InputFileComponent,
-    DropdownStatusComponent
+    DropdownStatusComponent,
+    DropdownSelectComponent
   ],
   exports: [
     InputComponent,
@@ -41,7 +43,7 @@ import { DropdownStatusComponent } from './dropdown-group/dropdown-status/dropdo
     InputDateComponent,
     InputFileComponent,
     DropdownStatusComponent,
-    
+    DropdownSelectComponent
 
   ],
 

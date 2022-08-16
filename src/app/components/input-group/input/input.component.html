@@ -3,11 +3,11 @@
   <div *ngIf="iconPath" class="icon-flex">
     <img [src]="iconPath" alt="">
   </div>
-  <input id="inputText" [formControl]="control" [(ngModel)]="dataValue" name="{{nameInput}}" type="{{typeInput}}"
+  <input id="inputText" [formControl]="control" name="{{nameInput}}" type="{{typeInput}}"
     placeholder="{{placeholderInput}}" class="form-control"
     (focus)="focus()" (focusout)="focuslost()"
     >
-  <div *ngIf="control.value != ''" class="icon-clear">
+  <div *ngIf="control.value != null && control.value != '' " class="icon-clear">
     <img (click)="clearInput()" src="assets/icons/clear.svg" alt="">
   </div>
 </div>

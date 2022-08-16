@@ -27,7 +27,7 @@ import { LoginComponent } from './modules/account/login/login.component';
     ThemesBaseComponent,
     DemopageComponent,
     NotfoundComponent,
-    LoginComponent
+    LoginComponent,
   ],
   imports: [
     BrowserModule,

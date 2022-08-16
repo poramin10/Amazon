@@ -24,7 +24,7 @@
     </div>
     <div class="col-lg-2 col-xl-2">
       <label for=""></label>
-      <app-button class="primary block sm-icon" (click)="openModal(createForm)" iconPath="/assets/icons/plus.svg"
+      <app-button class="primary block sm-icon" (click)="modalCreateMaterial(createForm)" iconPath="/assets/icons/plus.svg"
         buttonText="เพิ่ม Material">
       </app-button>
     </div>
@@ -50,16 +50,16 @@
             </tr>
           </thead>
           <tbody>
-            <tr>
+            <tr *ngFor="let material of materialList!" >
               <th class="text-center col-1" scope="row">
-                <img width="20px" src="/assets/icons/eye.svg" alt="">
+                <img style="cursor: pointer;" (click)="modalEditMaterial(editForm , material)" width="20px" src="/assets/icons/eye.svg" alt="">
                 <div class="line-table-left"></div>
               </th>
-              <td class="text-center line-table-bottom col-2">Data</td>
-              <td class="line-table-bottom col-3">Data</td>
-              <td class="text-center line-table-bottom col-2">Data</td>
-              <td class="text-center line-table-bottom col-2">Data</td>
-              <td class="col-2 text-center">Data<div class="line-table-right"></div>
+              <td class="text-center line-table-bottom col-2">{{material.code}}</td>
+              <td class="line-table-bottom col-3">{{material.description}}</td>
+              <td class="text-center line-table-bottom col-2">{{material.type}}</td>
+              <td class="text-center line-table-bottom col-2">{{material.unit}}</td>
+              <td [ngStyle]="{'color': material.active == true ? '#2DAC43' : '#B20000' }" class="col-2 text-center">{{ material.active == true ? 'Active' : 'Inactive' }}<div class="line-table-right"></div>
               </td>
             </tr>
           </tbody>
@@ -81,7 +81,7 @@
 </div>
 
 
-<!-- ! modal -->
+<!-- ! modal create -->
 <ng-template #createForm>
   <div class="modal-header">
     <h4 class="modal-title pull-left">เพิ่ม Material</h4>
@@ -90,37 +90,96 @@
   <div class="modal-body">
 
     <!-- Form -->
-    <form id="loginForm" [formGroup]="materialForm" (ngSubmit)="creatMaterial()">
+    <form id="materialForm" [formGroup]="materialForm" (ngSubmit)="creatMaterial()">
       <div class="row g-4">
         <div class="col-lg-12">
-          <label for="">Material Code <span class="text-danger">*</span></label>
-          <app-input [control]="getFormControlByKey('material_code')" class="input-primary block" placeholderInput="Material Code"></app-input>
+          <label class="fw-bold" for="">Material Code <span class="text-danger">*</span></label>
+          <app-input [control]="getFormControlByKey('code')" class="input-primary block" placeholderInput="Material Code"></app-input>
         </div>
         <div class="col-lg-12">
-          <label for="">Description <span class="text-danger">*</span></label>
+          <label class="fw-bold" for="">Description <span class="text-danger">*</span></label>
           <app-input [control]="getFormControlByKey('description')" class="input-primary block" placeholderInput="Description"></app-input>
         </div>
         <div class="col-lg-6">
-          <label for="">Material Type<span class="text-danger">*</span></label>
-          <app-input [control]="getFormControlByKey('material_type')" class="input-primary block" placeholderInput="Material Type"></app-input>
+          <label class="fw-bold" for="">Material Type<span class="text-danger">*</span></label>
+          <app-input [control]="getFormControlByKey('type')" class="input-primary block" placeholderInput="Material Type"></app-input>
         </div>
         <div class="col-lg-6">
-          <label for="">Unit <span class="text-danger">*</span></label>
+          <label class="fw-bold" for="">Unit <span class="text-danger">*</span></label>
           <app-input [control]="getFormControlByKey('unit')" class="input-primary block" placeholderInput="Unit"></app-input>
         </div>
         <div class="col-lg-12">
-          <label for="">Status <span class="text-danger">*</span></label>
-          <!-- <app-dropdown-status [statusData]="getFormControlByKey('status')"></app-dropdown-status> -->
+          <label class="fw-bold" for="">Status <span class="text-danger">*</span></label>
+          <!-- <app-dropdown-status (selectedEvent)="dataDropdown = $event"></app-dropdown-status> -->
+          <app-dropdown-status [statusData]="getFormControlByKey('active')"></app-dropdown-status>
         </div>
       </div>
 
       <!-- Button -->
       <div class="row mt-5 justify-content-center">
         <div class="col-lg-2">
-          <app-button (click)="creatMaterial()" class="primary block" [ngClass]="!materialForm.valid ? 'disabled' : '' " buttonText="บันทึก"></app-button>
+          <app-button (click)="creatMaterial()" class="primary block"
+            [ngClass]="(!materialForm.valid) ? 'disabled' : '' "
+            buttonText="บันทึก">
+          </app-button>
         </div>
         <div class="col-lg-2">
-          <app-button class="primary-outline block" buttonText="ยกเลิก"></app-button>
+          <app-button class="primary-outline block" (click)="modalRef?.hide()" buttonText="ยกเลิก"></app-button>
+        </div>
+      </div>
+
+    </form>
+
+  </div>
+</ng-template>
+
+<!-- ! modal edit -->
+<ng-template #editForm>
+  <div class="modal-header">
+    <h4 class="modal-title pull-left">แก้ไข Material</h4>
+    <img class="pull-right" style="cursor: pointer;" src="/assets/icons/close.svg" (click)="modalRef?.hide()" alt="">
+  </div>
+  <div class="modal-body">
+
+    <!-- Form -->
+    <form id="materialFormEdit" [formGroup]="materialForm" (ngSubmit)="creatMaterial()">
+      <div class="row g-4">
+        <div class="col-lg-12">
+          <label class="fw-bold" for="">Material Code</label>
+          <div class="mt-2">
+            {{this.materialForm.controls['code'].value}}
+          </div>
+        </div>
+        <div class="col-lg-12">
+          <label class="fw-bold" for="">Description <span class="text-danger">*</span></label>
+          <app-input [control]="getFormControlByKey('description')" class="input-primary block" placeholderInput="Description"></app-input>
+        </div>
+        <div class="col-lg-6">
+          <label class="fw-bold" for="">Material Type</label>
+          <div class="mt-2">
+            {{this.materialForm.controls['type'].value}}
+          </div>        </div>
+        <div class="col-lg-6">
+          <label class="fw-bold" for="">Unit</label>
+          <div class="mt-2">
+            {{this.materialForm.controls['unit'].value}}
+          </div>        </div>
+        <div class="col-lg-12">
+          <label class="fw-bold" for="">Status <span class="text-danger">*</span></label>
+          <app-dropdown-status [statusData]="getFormControlByKey('active')"></app-dropdown-status>
+        </div>
+      </div>
+
+      <!-- Button -->
+      <div class="row mt-5 justify-content-center">
+        <div class="col-lg-2">
+          <app-button (click)="creatMaterial()" class="primary block"
+            [ngClass]="(!materialForm.valid) ? 'disabled' : '' "
+            buttonText="บันทึก">
+          </app-button>
+        </div>
+        <div class="col-lg-2">
+          <app-button (click)="modalRef?.hide()" class="primary-outline block" buttonText="ยกเลิก"></app-button>
         </div>
       </div>
 
